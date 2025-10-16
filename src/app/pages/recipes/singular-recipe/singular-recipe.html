@@ -1,0 +1,23 @@
+@if (recipe) {
+  <div class="card shadow-sm p-4 mb-4">
+    <h2 class="card-title">{{ recipe?.title }}</h2>
+    <p class="card-text">{{ recipe?.description }}</p>
+    <ul class="list-group list-group-flush mb-3">
+      <li class="list-group-item">⏱ Tempo: {{ recipe?.prepTime }} minuti</li>
+      <li class="list-group-item">🍽 Porzioni: {{ recipe?.servings }}</li>
+      <li class="list-group-item">📈 Livello: {{ recipe?.level }}</li>
+    </ul>
+    <div>
+      <span class="fw-bold">Tags:</span>
+      @for (tag of recipe.tags; track $index) {
+        <button class="badge"><span >
+          {{ tag }}
+        </span></button>
+      }
+    </div>
+  </div>
+}
+
+<ng-template #loading>
+  <div class="alert alert-info">Caricamento ricetta...</div>
+</ng-template>

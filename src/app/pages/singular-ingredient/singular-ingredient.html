@@ -1,0 +1,14 @@
+@if (ingredient) {
+  <div class="card shadow-sm p-4 mb-4">
+    <h2 class="card-title">{{ ingredient?.name }}</h2>
+    <p class="card-text">{{ ingredient?.description }}</p>
+    <ul class="list-group list-group-flush mb-3">
+      <li class="list-group-item">{{ ingredient?.type }}</li>
+      <li class="list-group-item">{{ ingredient?.season }}</li>
+    </ul>
+  </div>
+}
+
+<ng-template #loading>
+  <div class="alert alert-info">Caricamento ingrediente...</div>
+</ng-template>

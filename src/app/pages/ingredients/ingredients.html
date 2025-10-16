@@ -1,0 +1,13 @@
+<p>ingredients works!</p>
+
+<button class="btn btn-dark" (click)="nextIngredient()">Next {{ingredientId()}}</button>
+@if (ingredientResourse.isLoading()) {
+  <div id="loading" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+}
+<div class="ingredients-container">
+  @for (ing of ingredientsResource.value(); track ing.id) {
+    <app-singular-ingredient [ingredient] = ing></app-singular-ingredient>
+  }
+</div>
