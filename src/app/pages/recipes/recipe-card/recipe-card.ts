@@ -1,5 +1,5 @@
 import {Component, Input, signal} from '@angular/core';
-import {Recipe} from '../../../../model/recipe';
+import {Recipe} from '../../../core/store/recipe/model/recipe';
 
 @Component({
   selector: 'app-singular-recipe',

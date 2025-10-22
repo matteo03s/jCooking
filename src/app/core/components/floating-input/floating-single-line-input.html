@@ -1,0 +1,50 @@
+<div class="mb-3">
+  <label class="form-label fw-semibold">{{ title }}</label>
+
+  <div class="form-floating">
+    <input
+      class="form-control"
+      [class.is-invalid]="invalid"
+      [type]="inputType"
+      [placeholder]="placeholder"
+      [value]="value"
+      [disabled]="disabled"
+      (input)="onInput($event)"
+      (blur)="onBlur()"
+    />
+    <label>{{ placeholder }}</label>
+  </div>
+
+  <!-- Error message -->
+  @if (invalid) {
+    <div class="text-danger small mt-1">
+      @if (ngControl?.control?.errors?.['required']) {
+      <ng-container>
+        This field is required.
+      </ng-container>
+      }
+      @if (ngControl?.control?.errors?.['minlength']) {
+      <ng-container>
+        Minimum length not met.
+      </ng-container>
+      }
+      @if (ngControl?.control?.errors?.['maxlength']) {
+      <ng-container>
+        Maximum length exceeded.
+      </ng-container>
+      }
+      @if (ngControl?.control?.errors?.['email'] && inputType === 'email') {
+        <ng-container>
+          Enter a valid email
+        </ng-container>
+      }
+      @if (ngControl?.control?.errors?.['pattern'] && inputType === 'password') {
+        <ng-container>
+          Enter a valid password (it must include at least 8 characters,
+          with at least one uppercase letter, one lowercase letter, one number,
+          and one special character ($, !, %, *, ?, &)
+        </ng-container>
+      }
+    </div>
+  }
+</div>

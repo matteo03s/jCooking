@@ -1,12 +1,10 @@
 import {Component, Input} from '@angular/core';
-import {RouterLink} from '@angular/router';
-import {Dropdown, MenuItem} from '../dropdown/dropdown';
+import {Dropdown, MenuItem} from '../../core/components/dropdown/dropdown';
 
 @Component({
   selector: 'app-navbar',
   imports: [
-    Dropdown,
-    RouterLink
+    Dropdown
   ],
   templateUrl: './navbar.html',
   standalone: true,
