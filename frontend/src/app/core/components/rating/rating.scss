@@ -1,0 +1,59 @@
+.rating-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // centra tutto
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+
+  .rating-title {
+    color: var(--color-accent);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .stars {
+    display: flex;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  .star {
+    background: none;
+    border: none;
+    font-size: 2.4rem;
+    color: #cfd8d4; // stelle "spente" grigio-verde tenue
+    cursor: pointer;
+    transition: color 0.25s ease, transform 0.15s ease;
+
+    // stelle "riempite"
+    &.filled {
+      color: var(--color-accent); // verde principale
+    }
+
+    // hover fluido
+    &:hover {
+      transform: scale(1.1);
+      color: #5f9d88; // verde un po’ più chiaro per effetto "attivo"
+    }
+
+    // rimuove il bordo focus
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    // leggero tocco alla pressione
+    &:active {
+      transform: scale(0.8);
+    }
+  }
+
+  .rating-value {
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+}

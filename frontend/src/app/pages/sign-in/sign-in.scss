@@ -1,0 +1,25 @@
+/* recipe-form.scss */
+body {
+  background-color: var(--color-bg); // colore chiaro-verde, ad esempio
+}
+/* Stile personalizzato per la card */
+.custom-card {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  max-width: 800px;
+  background-color: var(--color-bg-form);
+  border: 3px solid var(--color-accent);
+  border-radius: 3rem;
+  box-shadow: 0 0 20px 10px blue;
+}
+
+/* Stile titolo */
+.custom-title {
+  color: var(--color-accent);
+}
+app-submit-button {
+  --btn-font-size: 1.3rem;
+  display: block;
+  width: 50%;
+  margin-inline: 25%;
+}

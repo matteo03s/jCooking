@@ -1,0 +1,26 @@
+
+.range-container {
+  position: relative;
+  width: 100%;
+  border-radius: 20%;
+}
+
+
+                 .range-value {
+  position: absolute;
+  top: +40px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 2px 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-accent);
+  transform: translateX(-47%);
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  background-color: var(--color-accent);
+}
+label {color:var(--color-accent)}

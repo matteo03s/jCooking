@@ -1,0 +1,19 @@
+.drag-handle {
+  font-size: 1.2rem;
+  user-select: none;
+}
+
+.cdk-drag-preview {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  border-radius: 4px;
+}
+
+.cdk-drag-placeholder {
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 4px;
+  height: 2.5rem;
+}
+
+label { color: var(--color-accent); }
+
+input::placeholder { color: var(--color-accent); }

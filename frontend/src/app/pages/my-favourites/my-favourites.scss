@@ -1,0 +1,124 @@
+.favourites-container {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--text, #333);
+
+  .page-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-accent);
+  }
+
+  .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #ddd;
+      border-top-color: var(--accent, #e27d60);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    p {
+      color: #666;
+      font-size: 1rem;
+    }
+  }
+
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1rem;
+    color: #555;
+
+    .empty-img {
+      width: 300px;
+      opacity: 0.8;
+    }
+
+    .empty-text {
+      font-size: 1.1rem;
+    }
+  }
+
+  .favourites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .favourite-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-wrapper {
+      position: relative;
+      overflow: hidden;
+      height: 180px;
+
+      .recipe-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+
+      .remove-btn {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+.btn {
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-accent);
+  padding: 0.7rem 1.5rem;
+  color: var(--color-bg);
+  border: 2px solid var(--color-accent);
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #366353;
+    border-color: #366353;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}

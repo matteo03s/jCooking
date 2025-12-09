@@ -1,0 +1,27 @@
+<div class="friends container py-4">
+  <h2 class="page-title">{{ 'FRIENDSHIP.FRIENDS.TITLE' | translate }} 🧡</h2>
+
+  @if (friendshipStore.friends().length === 0) {
+    <p class="empty">{{ 'FRIENDSHIP.FRIENDS.NO_FRIENDS' | translate }} 😢
+      <br><br>
+    <a href="users/other" class="action-btn">🕵️‍♂️ {{ 'FRIENDSHIP.FRIENDS.BROWSE' | translate }}</a></p>
+  } @else {
+    <div class="friends-grid">
+      @for (friend of friendshipStore.friends(); track friend.id) {
+        <div class="friend-card">
+          <img
+            [src]="(friend.senderName === username ? friend.receiverAvatar : friend.senderAvatar) | safeAvatar"
+            alt="User avatar"
+            class="avatar"
+          />
+          <p class="friend-name">
+            <a [routerLink]="['/recipes/user', friend.senderName === username ? friend.receiverName : friend.senderName]">
+              {{ friend.senderName === username ? friend.receiverName : friend.senderName }}
+            </a>
+          </p>
+          <span class="since">{{ 'FRIENDSHIP.FRIENDS.SINCE' | translate }} {{ friend.createdAt | date: 'longDate' }}</span>
+        </div>
+      }
+    </div>
+  }
+</div>

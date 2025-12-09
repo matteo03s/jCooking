@@ -1,0 +1,77 @@
+h1 {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.upload-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background: var(--color-bg-form);
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+input[type="file"] {
+  display: block;
+  margin: 20px auto;
+  padding: 8px;
+}
+
+.info-block {
+  max-width: 700px;
+  margin: 40px auto;
+}
+
+app-submit-button {
+  --btn-font-size: 1.2rem;
+  display: block;
+  width: 70%;
+  margin-inline: 15%;
+}
+
+.link-edit {
+  margin-top: 20px;
+}
+
+
+.custom-file-input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.browse-btn {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+  &:hover {
+    background-color: var(--color-bg);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+.file-name-text {
+  font-style: italic;
+  color: var(--color-text-muted);
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,105 @@
+/*h1 {
+  color: var(--color-accent);
+  font-weight: 700;
+  margin-top: 3%;
+  margin-bottom: 2%;
+}
+.avatars {
+  margin-inline: 5%;
+//  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+}
+
+.avatars div {
+  cursor: pointer;
+  border: 5px solid transparent;
+  padding: 2px;
+  border-radius: 50%;
+  transition: border-color 0.2s;
+}
+
+.avatars div.selected {
+  border-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+.avatars img {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.submit-btn {
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+*/
+
+.avatar-selection-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.avatar-item {
+  margin-block: 10px;
+  cursor: pointer;
+  position: relative;
+  padding: 5px;
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 4px solid transparent;
+
+  img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    img {
+      box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+    }
+  }
+
+  &.selected {
+    border-color: var(--color-accent);
+    transform: scale(1.1);
+
+    img {
+      box-shadow: 0 0 2 6px rgba(255, 255, 255, 0.5);
+    }
+
+    .check-icon {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: var(--color-accent);
+      color: white;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      border: 2px solid white;
+    }
+  }
+}
+
+// Media query per schermi piccoli (mobile)
+// Su mobile forse vorrai ridurre a 1 o 2 elementi,
+// ma se il carosello ne forza 3, riduciamo l'immagine.
+@media (max-width: 576px) {
+  .avatar-item img {
+    width: 70px;
+    height: 70px;
+  }
+}

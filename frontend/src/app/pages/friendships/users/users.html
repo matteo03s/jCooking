@@ -1,0 +1,40 @@
+<div class="users container py-4">
+  <h2 class="page-title"> {{ 'FRIENDSHIP.USERS.TITLE' | translate}} 🧡</h2>
+
+  <!-- Campo ricerca -->
+  <div class="search-bar mb-4 text-center">
+    <input
+      type="text"
+      placeholder="'🔍 ' + ( 'FRIENDSHIP.USERS.SEARCH_PLACEHOLDER' | translate )"
+      class="search-input"
+      [value]="searchTerm()"
+      (input)="searchTerm.set(($any($event.target).value))"
+    />
+  </div>
+
+  @if (filteredUsers().length === 0) {
+    <p class="empty">{{ 'FRIENDSHIP.USERS.NO_USERS' | translate }} 😢</p>
+  } @else {
+    <div class="users-grid">
+      @for (user of filteredUsers(); track user.id) {
+        <div class="user-card">
+          <a [routerLink]="['/recipes/user', user.username]">
+            <img
+              [src]="user?.avatar | safeAvatar"
+              alt="User avatar"
+              class="avatar"
+            />
+          </a>
+
+          <p class="user-name">{{ user.username }}</p>
+
+          <button
+            class="friend-btn"
+            (click)="sendFriendRequest(user.id!)">
+            {{ 'FRIENDSHIP.USERS.REQUEST' | translate}}
+          </button>
+        </div>
+      }
+    </div>
+  }
+</div>

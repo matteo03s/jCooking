@@ -1,0 +1,64 @@
+<div class="friend-requests container py-5">
+  <h2 class="page-title text-center mb-4">{{ 'FRIENDSHIP.REQUEST.TITLE' | translate }} 🧡</h2>
+
+  <div class="requests-grid">
+    <!-- SEZIONE SINISTRA: RICEVUTE -->
+    <div class="requests-section received">
+      <h3>{{ 'FRIENDSHIP.REQUEST.RECEIVED' | translate }}</h3>
+
+      @if (friendshipStore.received().length === 0) {
+        <p class="empty">{{ 'FRIENDSHIP.REQUEST.NO_RECEIVED' | translate }} 😢</p>
+      } @else {
+        <div class="request-list">
+          @for (req of friendshipStore.received(); track req.id) {
+            <div class="request-card">
+              <img
+                [src]="req.senderAvatar | safeAvatar"
+                alt="Avatar"
+                class="avatar"
+              />
+              <div class="info">
+                <p class="username">
+                  <a [routerLink]="['/recipes/user', req.senderName]">
+                    {{ req.senderName }}
+                  </a>
+                </p>
+                <button class="accept-btn" (click)="accept(req.id!)">✔️ {{ 'FRIENDSHIP.REQUEST.ACCEPT' | translate }}</button>
+                <button class="decline-btn" (click)="decline(req.id!)">❌ {{ 'FRIENDSHIP.REQUEST.DECLINE' | translate }}</button>
+              </div>
+            </div>
+          }
+        </div>
+      }
+    </div>
+
+    <!-- SEZIONE DESTRA: INVIATE -->
+    <div class="requests-section sent">
+      <h3>{{ 'FRIENDSHIP.REQUEST.SENT' | translate }}</h3>
+
+      @if (friendshipStore.sent().length === 0) {
+        <p class="empty">{{ 'FRIENDSHIP.REQUEST.NO_SENT' | translate }} 💌</p>
+      } @else {
+        <div class="request-list">
+          @for (req of friendshipStore.sent(); track req.id) {
+            <div class="request-card">
+              <img
+                [src]="req.receiverAvatar | safeAvatar"
+                alt="Avatar"
+                class="avatar"
+              />
+              <div class="info">
+                <p class="username">
+                  <a [routerLink]="['/recipes/user', req.receiverName]">
+                    {{ req.receiverName }}
+                  </a>
+                </p>
+                <span class="status">{{ 'FRIENDSHIP.REQUEST.PENDING' | translate }}</span>
+              </div>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</div>

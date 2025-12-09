@@ -1,0 +1,21 @@
+h1 {
+  margin-top: 3%;
+  color: var(--color-accent);
+  font-weight: 700;
+}
+.recipe-card-carousel {
+  width: 40%;
+  padding: 2%;
+}
+
+@media (max-width: 768px) {
+  .recipe-card-carousel {
+    width: 240px;
+  }
+}
+
+@media (max-width: 576px) {
+  .recipe-card-carousel {
+    width: 100%;
+  }
+}

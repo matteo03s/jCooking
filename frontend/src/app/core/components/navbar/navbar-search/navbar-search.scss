@@ -1,0 +1,125 @@
+.search-input {
+  flex: 1;
+  border: 2px solid var(--color-accent);
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.6rem;
+  background-color: var(--color-bg);
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  width: 125px;
+
+  &:focus {
+    border-color: #366353;
+    box-shadow: 0 0 6px rgba(69, 122, 104, 0.3);
+    outline: none;
+  }
+}
+.filter-dropdown {
+  position: relative;
+
+  .custom-dropdown-btn {
+    background-color: transparent;
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+    border-radius: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-accent);
+      color: var(--color-bg);
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 2px solid var(--color-accent);
+      transition: all 0.3s ease;
+      border-color: transparent;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+      border-bottom: none;
+      border-right: none;
+    }
+
+    &::after {
+      bottom: 0;
+      right: 0;
+      border-top: none;
+      border-left: none;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      width: 100%;
+      height: 100%;
+      border-color: var(--color-accent);
+    }
+  }
+
+  .custom-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 140px;
+    background-color: var(--color-bg);
+    border: 2px solid var(--color-accent);
+    border-radius: 0.5rem;
+    margin-top: 0.25rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 0.25rem 0;
+    list-style: none;
+
+    &.show {
+      display: block;
+    }
+
+    .custom-dropdown-item {
+      color: var(--color-accent);
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      display: block;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: var(--color-accent);
+        color: var(--color-bg);
+      }
+    }
+  }
+}
+.navbar-search .search-btn {
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.7rem;
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  font-size: 0.9rem;
+  border: 2px solid var(--color-accent);
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #366353;
+    border-color: #366353;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+
+

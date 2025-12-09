@@ -1,0 +1,29 @@
+.btn {
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  font-size: 1rem;
+  font-weight: 500;
+  border: 2px solid var(--color-accent);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    color: var(--color-bg);
+    background-color: #366353;
+    border-color: #366353;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

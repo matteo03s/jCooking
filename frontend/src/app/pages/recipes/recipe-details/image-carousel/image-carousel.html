@@ -1,0 +1,29 @@
+
+  <app-carousel
+    [title] = "title"
+    target="recipeImagesCarousel"
+    [items]="images"
+    [itemsPerSlide]="itemsPerSlide"
+    [itemTemplate]="imageTemplate"
+  ></app-carousel>
+
+  <ng-template #imageTemplate let-image>
+    <div class="slide-wrapper">
+    <div class="carousel-image-container">
+      <img
+        [src]="image.urlImage"
+        alt="Foto {{ image.id }}"
+        class="d-block recipe-carousel-img"
+      >
+      @if (image.primary) {
+      <span class="badge bg-primary position-absolute top-0 start-0 m-2">Principale</span>
+      }
+    </div>
+    @if (removable) {
+      <div class="carousel-controls">
+        <a role="button" class="link-remove" (click)="openModal(image.id!)">🗑️ Delete</a>
+      </div>
+    }
+    </div>
+  </ng-template>
+

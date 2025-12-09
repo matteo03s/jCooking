@@ -1,0 +1,29 @@
+<div class="lang-switcher">
+  <button
+    class="btn btn-sm"
+    [class.lang-btn]="currentLang === 'it'"
+    (click)="switchLanguage('it')">
+    🇮🇹 IT
+  </button>
+
+  <button
+    class="btn btn-sm"
+    [class.lang-btn]="currentLang === 'en'"
+    (click)="switchLanguage('en')">
+    🇬🇧 EN
+  </button>
+
+  <button
+    class="btn btn-sm"
+    [class.lang-btn]="currentLang === 'es'"
+    (click)="switchLanguage('es')">
+    🇪🇸 ES
+  </button>
+
+  <button
+    class="btn btn-sm"
+    [class.lang-btn]="currentLang === 'fr'"
+    (click)="switchLanguage('fr')">
+    🇫🇷 FR
+  </button>
+</div>

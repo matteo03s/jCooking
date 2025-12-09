@@ -1,0 +1,37 @@
+
+<body>
+<div class="container">
+  <div class="card shadow-lg p-4 mx-auto custom-card">
+    <h2 class="mb-4 text-center custom-title">Login</h2>
+
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+      <!-- Floating Username -->
+      <app-floating-single-line-input
+        formControlName="username"
+        title='Username'
+        placeholder="{{ 'AUTH.USERNAME' | translate}}"
+        inputType="text"
+      ></app-floating-single-line-input>
+
+      <!-- Floating Psssword -->
+      <app-floating-single-line-input
+        formControlName="password"
+        title='Password'
+        inputType="password"
+        placeholder="{{ 'AUTH.PASSWORD' | translate}}"
+      ></app-floating-single-line-input>
+
+      <!-- Submit Button -->
+      <app-submit-button
+        [label]="'🔐' + ('AUTH.LOGIN' | translate)"
+        [disabled]="authStore.isLoading() || userForm.invalid"
+        [isLoading]="authStore.isLoading()">
+      </app-submit-button>
+
+
+    </form>
+  </div>
+</div>
+
+</body>

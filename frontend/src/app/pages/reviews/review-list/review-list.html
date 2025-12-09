@@ -1,0 +1,24 @@
+<div class="review-list-container">
+  <h2 class="review-list-title">{{ 'REVIEWS.LIST' | translate }}</h2>
+
+  @if (isLoading()) {
+    <app-spinner class="my-5"></app-spinner>
+  }
+
+  @if (!isLoading() && reviews().length === 0) {
+    <div class="no-element">{{ 'REVIEWS.NO_ELEMENT' | translate }} 😢</div>
+  }
+
+  @if (!isLoading() && reviews().length > 0) {
+    <div class="review-list">
+      @for (review of reviews(); track review.id) {
+        <div class="review-card">
+          <app-review-card
+            [review]="review"
+            [removable]="my"
+          ></app-review-card>
+        </div>
+      }
+    </div>
+  }
+</div>

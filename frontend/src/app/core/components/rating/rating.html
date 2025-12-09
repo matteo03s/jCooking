@@ -1,0 +1,26 @@
+<div class="rating-root" role="radiogroup" aria-label="Rating">
+  <h6 class="rating-title">{{ 'REVIEWS.RATE' | translate }}</h6>
+
+  <div class="stars" (mouseleave)="leave()">
+    @for (star of stars; track $index) {
+      <button
+        type="button"
+        class="star"
+        [class.filled]="hovered > 0 ? $index + 1 <= hovered : $index + 1 <= rating"
+        role="radio"
+        aria-checked="{{ $index + 1 === rating }}"
+        [attr.aria-label]="'Rate ' + ($index + 1) + ' out of ' + max"
+        (click)="setRating($index + 1)"
+        (mouseenter)="enter($index + 1)"
+        (focus)="focusedIndex = $index"
+        (blur)="focusedIndex = -1"
+      >
+        ★
+      </button>
+    }
+  </div>
+
+  <div class="rating-value">
+    <strong>{{ rating }}</strong> / {{ max }}
+  </div>
+</div>

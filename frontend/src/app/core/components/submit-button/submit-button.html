@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-center mt-3">
+  <button
+    type="submit"
+    class="submit-btn"
+    [disabled]="disabled || isLoading"
+    [class.loading]="isLoading">
+
+    @if (isLoading) {
+      <app-spinner/>{{ loadingLabel | translate}}
+    } @else {
+      {{ label }}
+    }
+
+  </button>
+</div>

@@ -1,0 +1,436 @@
+{
+  "NAV": {
+    "HOME": "Inicio",
+    "RECIPES": "Recetas",
+    "ALL_RECIPES": "Recetas",
+    "MY_RECIPES": "Mis recetas",
+    "NEW_RECIPE": "Escribir nueva receta",
+    "FAVOURITES": "Tus favoritas",
+    "CATEGORIES": "Categorías",
+    "EQUIVALENCES": "Tabla de equivalencias",
+    "CHEFBOT": "ChefBot",
+    "LOGIN": "Iniciar sesión",
+    "SIGNUP": "Registrarse",
+    "MY_ACCOUNT": "Mi perfil",
+    "LOGOUT": "Cerrar sesión"
+  },
+  "SEARCH": {
+    "TITLE": "Título",
+    "AUTHOR": "Autor",
+    "LEVEL": "Nivel",
+    "CATEGORY": "Categoría",
+    "RATING": "Val. mínima",
+    "SUBMIT": "Buscar",
+    "PLACEHOLDER": "Buscar receta...",
+    "RATE_PLACEHOLDER": "Val. mínima (0 - 10)"
+  },
+  "HOME": {
+    "HIGHEST": "Recetas mejor valoradas",
+    "TOP_RATED": "Recetas más populares",
+    "TOP_AUTHORS": "Mejores autores",
+    "AUTHOR_MANY": "Recetas publicadas"
+  },
+  "FOOTER": {
+    "MAP": "Mapa del sitio",
+    "HOME": "Inicio",
+    "RECIPES": "Recetas",
+    "CATEGORIES": "Categorías",
+    "EQUIVALENCES": "Tabla de conversión",
+    "ABOUT": "Sobre nosotros",
+    "CONTACT": "Contáctanos",
+    "RIGHTS": "© 2025 jCooking. Todos los derechos reservados.",
+    "TEXT": "Creado para compartir recetas auténticas e inspirar a los amantes de la cocina. Un proyecto dedicado a quienes encuentran creatividad y pasión en la cocina.",
+    "SCROLL": "Volver arriba",
+    "CREATED": "Creado con",
+    "BY": "por"
+  },
+  "AUTH": {
+    "USERNAME": "Ingresa tu usuario",
+    "PASSWORD": "Ingresa tu contraseña",
+    "LOGIN": "Entrar"
+  },
+  "REGISTER": {
+    "TITLE": "Crear cuenta",
+    "USER": {
+      "TITLE": "Usuario",
+      "NAME": "Nombre",
+      "NAME_PLACEHOLDER": "Ingresa tu nombre",
+      "SURNAME": "Apellido",
+      "SURNAME_PLACEHOLDER": "Ingresa tu apellido",
+      "EMAIL": "Correo",
+      "EMAIL_PLACEHOLDER": "Ingresa tu correo",
+      "GENDER": {
+        "TITLE": "Género",
+        "FEMALE": "Femenino",
+        "MALE": "Masculino",
+        "NON": "No binario",
+        "OTHER": "Otro / No especificado"
+      },
+      "AGE": "Edad"
+    },
+    "CREDENTIALS": {
+      "TITLE": "Credenciales",
+      "USERNAME": "Nombre de usuario",
+      "USERNAME_PLACEHOLDER": "Ingresa un usuario",
+      "PASSWORD": "Contraseña",
+      "PASSWORD_PLACEHOLDER": "Ingresa una contraseña",
+      "CONFIRM": "Confirmar contraseña",
+      "CONFIRM_PLACEHOLDER": "Confirma tu contraseña"
+    },
+    "AVATAR": "Elige tu avatar",
+    "SUBMIT": "Crear perfil"
+  },
+  "RECIPES": {
+    "ALL": "Todas las recetas",
+    "MY": "Mis recetas",
+    "CREATED": "Recetas creadas por: ",
+    "FAVOURITES": {
+      "MY": "Tus recetas favoritas",
+      "NO_ELEMENT": "Aún no has añadido recetas favoritas",
+      "LOADING": "Cargando favoritos",
+      "BROWSE": "Explorar recetas"
+    },
+    "CATEGORIES": "Categorías de recetas",
+    "TAG": "Recetas con etiqueta: ",
+    "NO_ELEMENT": "No hay recetas disponibles",
+    "LOADING": "Cargando...",
+    "LOAD": "Cargar más recetas"
+  },
+  "RECIPE": {
+    "LIKE": {
+      "LIKED_BY_ONE": "A 1 usuario le gusta esta receta",
+      "LIKED_BY_MANY": "A {{count}} usuarios les gusta esta receta",
+      "NO_LIKES": "Sin me gusta aún"
+    },
+    "ACTIONS": {
+      "NEW_REVIEW": "Nueva reseña",
+      "VISUALIZE_REVIEW": "Ver reseñas",
+      "EDIT": "Editar",
+      "DELETE": "Eliminar"
+    },
+    "AI": {
+      "TITLE": "Funciones ChefBot",
+      "NUTRITION": "Análisis nutricional",
+      "SOMMELIER": "Preguntar al Sommelier",
+      "NUTRITION_LOADING": "Calculando",
+      "SOMMELIER_LOADING": "Degustando"
+    },
+    "DETAILS": "Detalles",
+    "PREP_TIME": "Tiempo preparación",
+    "COOK_TIME": "Tiempo cocción",
+    "SERVINGS": "Porciones",
+    "LEVEL": "Nivel",
+    "CATEGORY": "Categoría",
+    "DATE": "Publicado el",
+    "INGREDIENTS": "Ingredientes",
+    "STEPS": "Instrucciones",
+    "AUTHOR": "Autor",
+    "NO_AUTHOR": "No especificado",
+    "IMAGES": "Imágenes de la receta"
+  },
+  "AI": {
+    "GENERATOR": {
+      "SUBTITLE": "¿No sabes qué cocinar? Enumera lo que hay en tu nevera y deja que ocurra la magia",
+      "INGREDIENTS": "¿Qué tienes a mano?",
+      "ING_PLACEHOLDER": "Ej: 3 huevos, calabacín, medio limón, pasta...",
+      "TYPE": "¿Qué te apetece? (Opcional)",
+      "TYPE_PLACEHOLDER": "Ej: Comida rápida, Plato único, Postre...",
+      "SUBMIT": "Generar Receta",
+      "SUCCESS": "¡Receta creada! Esto es lo que se me ocurrió",
+      "REMOVE": "Descartar y Reintentar",
+      "SAVE": "Guardar en recetario",
+      "SAVE_LOADING": "Guardando..."
+    },
+    "SOMMELIER": {
+      "TITLE": "Sugerencias del Sommelier",
+      "TEMP": "Servir a"
+    },
+    "NUTRITION": {
+      "TITLE": "Valores Nutricionales",
+      "SUBTITLE": "(por porción)",
+      "CARBS": "Carbohidratos",
+      "PROTEINS": "Proteínas",
+      "FATS": "Grasas",
+      "DISCLAIMER": "* Valores estimados por IA. Consulta a un profesional para dietas médicas"
+    },
+    "TITLE": "Funciones IA",
+    "GENERATE": "Inventar una receta",
+    "DESCRIBE": "Generar descripción",
+    "TAGS": "Generar etiquetas"
+  },
+  "RECIPE_FORM": {
+    "EDIT_TITLE": "Editar receta",
+    "CREATE_TITLE": "Crear receta",
+    "TITLE": "Título",
+    "TITLE_PLACEHOLDER": "Ingresa el título",
+    "SERVINGS": "Porciones",
+    "SERVINGS_PLACEHOLDER": "porciones",
+    "DESCRIPTION": "Descripción",
+    "DESCRIPTION_PLACEHOLDER": "Ingresa la descripción",
+    "PREP_TIME_TITLE": "T. Preparación (minutos)",
+    "COOK_TIME_TITLE": "T. Cocción (minutos)",
+    "STEPS": "Pasos",
+    "INGREDIENTS": {
+      "TITLE": "Ingredientes",
+      "NAME_PLACEHOLDER": "Nombre ingrediente",
+      "QUANTITY_PLACEHOLDER": "Cantidad",
+      "UNIT": "Unidad",
+      "REMOVE": "Quitar ",
+      "ERROR": "No se permiten ingredientes duplicados",
+      "ADD": "+ Añadir Ingrediente"
+    },
+    "SUBMIT": "Enviar Receta",
+    "UPDATE": "Actualizar Receta"
+  },
+  "IMAGE_FORM": {
+    "TITLE": "Subir Imágenes",
+    "VISUALIZE": "Ver Receta",
+    "IMAGE_CAR": "Fotos subidas",
+    "SELECT": "Seleccionar archivos",
+    "UPLOAD_ONE": "Subir 1 imagen",
+    "BROWSE": "Examinar...",
+    "NO_FILE": "Ningún archivo seleccionado"
+  },
+  "FIELDS_GENERATOR": {
+    "DESCRIPTION": {
+      "LABEL": "Auto-Descripción IA",
+      "LOADING": "Escribiendo...",
+      "TOOLTIP": "Generar descripción con IA"
+    },
+    "STEPS": {
+      "LABEL": "Auto-Pasos IA",
+      "LOADING": "Escribiendo pasos...",
+      "TOOLTIP": "Generar pasos con IA"
+    },
+    "TAGS": {
+      "LABEL": "Auto-Etiquetas IA",
+      "LOADING": "Etiquetando...",
+      "TOOLTIP": "Generar etiquetas con IA"
+    }
+  },
+  "LEVEL": {
+    "TITLE": "Nivel",
+    "VERY_EASY": "muy fácil",
+    "EASY": "fácil",
+    "MEDIUM": "medio",
+    "HARD": "difícil"
+  },
+  "CATEGORY": {
+    "TITLE": "Categoría",
+    "FIRST": "",
+    "SECOND": ""
+  },
+  "FORM": {
+    "SELECT": "Seleccionar",
+    "ENTER": "Ingresar",
+    "LOADING": "Cargando...",
+    "REQUIRED": "Este campo es obligatorio.",
+    "MINLENGTH": "Longitud mínima no alcanzada.",
+    "MAXLENGTH": "Longitud máxima excedida.",
+    "EMAIL": "Ingresa un correo válido.",
+    "PASSWORD": "Ingresa una contraseña válida (debe incluir al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial).",
+    "MISMATCH": "Las contraseñas no coinciden \uD83D\uDD10",
+    "GENERIC": "Entrada inválida"
+  },
+  "REVIEWS": {
+    "LIST": "Reseñas",
+    "NO_ELEMENT": "No hay reseñas disponibles",
+    "TITLE": "Nueva Reseña",
+    "REV_TITLE": "Título",
+    "REV_TITLE_PLACEHOLDER": "Ingresa el título de tu reseña",
+    "REV_COMMENT": "Comentario",
+    "REV_COMMENT_PLACEHOLDER": "Escribe tu comentario",
+    "RATE": "Valoración",
+    "SUBMIT": "Enviar reseña"
+  },
+  "MODAL": {
+    "CONFIRM": "Confirmar",
+    "CANCEL": "Cancelar",
+    "IMAGE": {
+      "TITLE": "Eliminar Imagen",
+      "MESSAGE": "¿Estás seguro de que quieres eliminar esta imagen?"
+    },
+    "REVIEW": {
+      "TITLE": "Eliminar Reseña",
+      "MESSAGE": "¿Estás seguro de que quieres eliminar esta reseña?"
+    }
+  },
+  "USER": {
+    "NOT_EMAIL": "Correo no especificado",
+    "AGE": "Edad: ",
+    "AGE2": " años",
+    "GENDER": "Género:",
+    "MODIFY": "Editar perfil",
+    "VISUALIZE_RECIPES": "Ver tus recetas",
+    "VISUALIZE_FAVOURITES": "Ver tus favoritos",
+    "VISUALIZE_REVIEWS": "Ver tus reseñas",
+    "WRITE_RECIPE": "Escribir nueva reseña",
+    "FIND_FRIENDSHIPS": "Buscar amigos",
+    "MY_FRIENDSHIPS": "Tus amigos",
+    "REQUEST_FRIENDSHIPS": "Tus solicitudes",
+    "UPDATE": {
+      "TITLE": "Actualizar perfil",
+      "NAME": "Nombre",
+      "NAME_PLACEHOLDER": "Tu nombre",
+      "SURNAME": "Apellido",
+      "SURNAME_PLACEHOLDER": "Tu apellido",
+      "EMAIL_PLACEHOLDER": "Tu correo",
+      "USERNAME_PLACEHOLDER": "Tu usuario",
+      "GENDER": "Género",
+      "AGE": "Edad",
+      "SUBMIT": "Guardar perfil"
+    }
+  },
+  "FRIENDSHIP": {
+    "FRIENDS": {
+      "TITLE": "Tus amigos",
+      "NO_FRIENDS": "Aún no tienes amigos añadidos",
+      "BROWSE": "Buscar nuevos amigos",
+      "SINCE": "Desde: "
+    },
+    "REQUEST": {
+      "TITLE": "Solicitudes de amistad",
+      "RECEIVED": "Solicitudes recibidas",
+      "NO_RECEIVED": "Sin solicitudes recibidas",
+      "ACCEPT": "Aceptar",
+      "DECLINE": "Rechazar",
+      "SENT": "Solicitudes enviadas",
+      "NO_SENT": "Sin solicitudes enviadas",
+      "PENDING": "Pendiente..."
+    },
+    "USERS": {
+      "TITLE": "Todos los usuarios",
+      "SEARCH_PLACEHOLDER": "Buscar usuario...",
+      "NO_USERS": "No hay usuarios disponibles",
+      "REQUEST": "Enviar solicitud"
+    }
+  },
+  "EQUIVALENCES": {
+    "TITLE": "Tabla de equivalencias",
+    "LOADING": "Cargando datos...",
+    "SEARCH_PLACEHOLDER": "Busca un ingrediente para encontrar su sustituto...",
+    "INGREDIENT": "Ingrediente",
+    "QUANTITY": "Cantidad",
+    "SUBSTITUTE_QUANTITY": "Cantidad del sustituto",
+    "NOTES": "Notas",
+    "NO_MATCHES": "No se encontraron elementos"
+  },
+  "NOTIFICATION": {
+    "AUTH": {
+      "REGISTRATION_SUCCESS": "¡Registro realizado con éxito!",
+      "REGISTRATION_FAILED": "Error durante el registro",
+      "LOGIN_SUCCESS": "¡Inicio de sesión exitoso!",
+      "LOGIN_FAILED": "Credenciales no válidas",
+      "LOGOUT_SUCCESS": "¡Sesión cerrada con éxito!",
+      "LOGOUT_FAILED": "Error al cerrar sesión"
+    },
+    "USER": {
+      "LOAD_SUCCESS": "¡Usuario recargado del almacenamiento local!",
+      "LOAD_FAILED": "Error al cargar el usuario guardado",
+      "EDIT_SUCCESS": "¡Perfil actualizado con éxito!",
+      "EDIT_FAILED": "Error al actualizar el perfil",
+      "USERS_FAILED": "Error al cargar otros usuarios",
+      "TOP_USERS_FAILED": "Error al cargar los mejores usuarios"
+    },
+    "FRIENDSHIP": {
+      "REQUEST_ERROR": "Error al cargar las solicitudes",
+      "SENT_REQUEST_ERROR": "Error al cargar las solicitudes enviadas",
+      "RECEIVED_REQUEST_ERROR": "Error al cargar las solicitudes recibidas"
+    },
+    "REVIEWS": {
+      "ERROR_LOADING": "Error al cargar las reseñas",
+      "ERROR_RECIPE": "Error al cargar las reseñas de la receta seleccionada",
+      "ERROR_AUTHOR": "Error al cargar las reseñas del autor seleccionado",
+      "POST_SUCCESS": "¡Reseña publicada con éxito!",
+      "POST_FAILED": "Error al publicar la reseña",
+      "DELETE_SUCCESS": "¡Reseña eliminada con éxito!",
+      "DELETE_FAILED": "Error al eliminar la reseña"
+    },
+    "FAVOURITES": {
+      "ERROR_LOADING": "Error al cargar tus recetas favoritas",
+      "ADD_SUCCESS": "¡Receta añadida a tus favoritos con éxito!",
+      "ADD_FAILED": "Error al añadir la receta a favoritos",
+      "ADD_ALREADY": "¡La receta ya está en tus favoritos!",
+      "REMOVE_SUCCESS": "¡Receta eliminada de tus favoritos con éxito!",
+      "REMOVE_FAILED": "Error al eliminar de favoritos"
+    },
+    "CHEFBOT": {
+      "RECIPE_SUCCESS": "¡Receta creada por ChefBot!",
+      "RECIPE_FAILED": "ChefBot no pudo crear la receta",
+      "SOMMELIER_SUCCESS": "¡El sommelier ha respondido!",
+      "SOMMELIER_FAILED": "El Sommelier está en su pausa para el café...",
+      "NUTRITION_SUCCESS": "¡Valores nutricionales calculados con éxito!",
+      "NUTRITION_FAILED": "Imposible calcular los valores nutricionales",
+      "DESCRIPTION_SUCCESS": "¡Descripción generada con éxito!",
+      "DESCRIPTION_FAILED": "Error al generar la descripción",
+      "TAG_SUCCESS": "¡Etiquetas generadas con éxito!",
+      "TAG_FAILED": "Error al generar las etiquetas",
+      "STEPS_SUCCESS": "¡Instrucciones generadas con éxito!",
+      "STEPS_FAILED": "Error al generar las instrucciones",
+      "TRANSLATE_SUCCESS": "¡Traducción completada!",
+      "TRANSLATE_FAILED": "Error durante la traducción"
+    },
+    "RECIPE": {
+      "ID_ERROR": "Error al cargar la receta",
+      "POST_SUCCESS": "¡Receta creada con éxito!",
+      "POST_FAILED": "Error al crear la receta",
+      "HIGHEST_FAILED": "Error al cargar las recetas mejor valoradas",
+      "POPULAR_FAILED": "Error al cargar las recetas más populares",
+      "DELETE_SUCCESS": "¡Receta eliminada con éxito!",
+      "DELETE_FAILED": "Error al eliminar la receta",
+      "EDIT_SUCCESS": "¡Receta modificada con éxito!",
+      "EDIT_FAILED": "Error al modificar la receta",
+      "UPLOAD_IMAGE_SUCCESS": "¡Imagen subida con éxito!",
+      "UPLOAD_IMAGE_FAILED": "Error al subir la imagen",
+      "DELETE_IMAGE_SUCCESS": "¡Imagen eliminada con éxito!",
+      "DELETE_IMAGE_FAILED": "Error al eliminar la imagen"
+    }
+  },
+  "ABOUT": {
+    "TITLE": "Sobre jCooking",
+    "THESIS": "jCooking es una aplicación web creada como parte de un proyecto de tesis en Ingeniería Informática en la\n    <strong>Universidad Roma Tre</strong>.\n    La plataforma fue diseñada y desarrollada por <strong>Matteo</strong>.",
+    "WHY?": "¿Por qué este proyecto?",
+    "CAUSE": "La idea detrás de jCooking nació de la necesidad de una plataforma de recetas centrada en la claridad, accesibilidad\n      y simplicidad. Muchas soluciones existentes están desordenadas o sobrecargadas de anuncios.\n      jCooking tiene como objetivo proporcionar una experiencia limpia e intuitiva.",
+    "AI": {
+      "TITLE": "Funciones de IA",
+      "RECIPE": "Deja que la IA genere una receta para ti",
+      "DESCRIPTION": "Deja que la IA genere una descripción para tu receta",
+      "TAGS": "Deja que la IA genere una lista de etiquetas para tu receta",
+      "STEPS": "Deja que la IA genere los pasos para tu receta",
+      "SOMMELIER": "Deja que la IA recomiende la mejor bebida para tu plato",
+      "NUTRITION": "Deja que la IA calcule los valores nutricionales de un plato",
+      "TRANSLATOR": "Deja que la IA traduzca la receta para ti"
+    },
+    "FEATURES": {
+      "TITLE": "Lo que puedes hacer en jCooking",
+      "RECIPES": "Crear, editar y organizar tus recetas",
+      "INGREDIENTS": "Añadir ingredientes con cantidades y unidades",
+      "TIME": "Rastrear tiempos de preparación y cocción",
+      "CATEGORY": "Elegir categorías y niveles de dificultad",
+      "TAGS": "Añadir etiquetas para una mejor organización",
+      "STEPS": "Gestionar pasos de cocina detallados",
+      "REVIEWS": "Dejar reseñas detalladas para guiar a otros usuarios",
+      "FAVOURITES": "Guardar recetas en tus favoritos",
+      "FRIENDSHIPS": "Añadir amigos para acceder rápidamente a sus recetas"
+    },
+    "WHO": {
+      "TITLE": "Quién desarrolló jCooking",
+      "WHO": "Me llamo <strong>Matteo</strong> y soy estudiante de Ingeniería Informática en la\n      <strong>Universidad de Roma Tre</strong>.\n      jCooking fue desarrollado como mi proyecto de tesis, utilizando:",
+      "SPRING": "<strong>Spring Boot</strong> para el backend",
+      "ANGULAR": "<strong>Angular</strong> para el frontend",
+      "SQL": "<strong>MySQL</strong> para la base de datos",
+      "BOOTSTRAP": "<strong>Bootstrap + SCSS</strong> para la interfaz de usuario"
+    },
+    "FUTURE": {
+      "TITLE": "Mejoras futuras",
+      "SEARCH": "Búsqueda avanzada y filtros",
+      "STATISTICS": "Estadísticas y análisis de recetas",
+      "SOCIAL": "Compartir y funciones sociales",
+      "VIDEO": "Soporte para videos y otros medios"
+    },
+    "THANKS": {
+      "TITLE": "Agradecimientos",
+      "TEXT": "Un agradecimiento especial a mis profesores, colegas y a todos los que apoyaron este proyecto.\n      jCooking no es un producto comercial, sino una experiencia de aprendizaje que demuestra habilidades de desarrollo full-stack."
+    }
+  }
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "ingredient": "Sucre en poudre",
+    "quantity": "100 g",
+    "substitute": "Miel",
+    "substituteQuantity": "80 g",
+    "note": "Réduire le liquide de la recette de 20%."
+  },
+  {
+    "ingredient": "Sucre en poudre",
+    "quantity": "100 g",
+    "substitute": "Sucre roux",
+    "substituteQuantity": "110 g",
+    "note": "Apporte une saveur plus caramélisée."
+  },
+  {
+    "ingredient": "Farine de blé",
+    "quantity": "100 g",
+    "substitute": "Farine complète",
+    "substituteQuantity": "110 g",
+    "note": "Peut rendre la pâte plus rustique et moins moelleuse."
+  },
+  {
+    "ingredient": "Farine de blé",
+    "quantity": "100 g",
+    "substitute": "Farine d'avoine",
+    "substituteQuantity": "90 g",
+    "note": "Bon pour gâteaux et pancakes, mais moins élastique."
+  },
+  {
+    "ingredient": "Beurre",
+    "quantity": "100 g",
+    "substitute": "Huile végétale",
+    "substituteQuantity": "80 g",
+    "note": "Réduit les graisses saturées mais change la texture."
+  },
+  {
+    "ingredient": "Beurre",
+    "quantity": "100 g",
+    "substitute": "Margarine végétale",
+    "substituteQuantity": "100 g",
+    "note": "Parfait pour les préparations véganes."
+  },
+  {
+    "ingredient": "Lait de vache",
+    "quantity": "200 ml",
+    "substitute": "Lait de soja",
+    "substituteQuantity": "200 ml",
+    "note": "Alternative végétale au goût neutre."
+  },
+  {
+    "ingredient": "Lait de vache",
+    "quantity": "200 ml",
+    "substitute": "Lait d'amande",
+    "substituteQuantity": "200 ml",
+    "note": "Ajoute une saveur légèrement sucrée."
+  },
+  {
+    "ingredient": "Œufs entiers",
+    "quantity": "1 pièce",
+    "substitute": "Graines de lin moulues + eau",
+    "substituteQuantity": "1 c.à.s graines + 3 c.à.s eau",
+    "note": "Laisser reposer 10 min pour former un gel."
+  },
+  {
+    "ingredient": "Œufs entiers",
+    "quantity": "1 pièce",
+    "substitute": "Compote de pommes",
+    "substituteQuantity": "50 g",
+    "note": "Idéal en pâtisserie, ajoute de l'humidité."
+  },
+  {
+    "ingredient": "Crème liquide",
+    "quantity": "100 ml",
+    "substitute": "Lait + beurre",
+    "substituteQuantity": "80 ml lait + 20 g beurre",
+    "note": "Imite la consistance de la crème."
+  },
+  {
+    "ingredient": "Yaourt nature",
+    "quantity": "100 g",
+    "substitute": "Lait de soja + citron",
+    "substituteQuantity": "100 ml lait + 1 c.à.c citron",
+    "note": "Laisser reposer 10 min pour obtenir un effet similaire."
+  },
+  {
+    "ingredient": "Chapelure",
+    "quantity": "50 g",
+    "substitute": "Flocons d'avoine hachés",
+    "substituteQuantity": "50 g",
+    "note": "Améliore la texture et la valeur nutritionnelle."
+  },
+  {
+    "ingredient": "Chapelure",
+    "quantity": "50 g",
+    "substitute": "Crackers écrasés",
+    "substituteQuantity": "50 g",
+    "note": "Donne un effet croustillant agréable."
+  },
+  {
+    "ingredient": "Crème fouettée",
+    "quantity": "100 g",
+    "substitute": "Crème de coco fouettée",
+    "substituteQuantity": "100 g",
+    "note": "Alternative végane avec une saveur tropicale."
+  },
+  {
+    "ingredient": "Chocolat noir",
+    "quantity": "100 g",
+    "substitute": "Cacao non sucré + beurre",
+    "substituteQuantity": "60 g cacao + 40 g beurre",
+    "note": "Fondre ensemble pour obtenir une consistance similaire."
+  },
+  {
+    "ingredient": "Crème aigre",
+    "quantity": "100 g",
+    "substitute": "Yaourt + citron",
+    "substituteQuantity": "100 g yaourt + 1 c.à.c citron",
+    "note": "Parfait pour des substitutions rapides."
+  },
+  {
+    "ingredient": "Levure chimique",
+    "quantity": "1 sachet (16 g)",
+    "substitute": "Bicarbonate + citron",
+    "substituteQuantity": "1 c.à.c bicarbonate + 1 c.à.s citron",
+    "note": "Mélanger au dernier moment pour l'effervescence."
+  },
+  {
+    "ingredient": "Cacao non sucré",
+    "quantity": "20 g",
+    "substitute": "Chocolat noir râpé",
+    "substituteQuantity": "40 g",
+    "note": "Ajoute plus de sucre et de gras."
+  },
+  {
+    "ingredient": "Chapelure",
+    "quantity": "50 g",
+    "substitute": "Semoule de maïs",
+    "substituteQuantity": "50 g",
+    "note": "Parfait pour des panures plus croustillantes."
+  }
+]

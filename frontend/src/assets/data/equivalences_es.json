@@ -1,0 +1,142 @@
+[
+  {
+    "ingredient": "Azúcar blanco",
+    "quantity": "100 g",
+    "substitute": "Miel",
+    "substituteQuantity": "80 g",
+    "note": "Reduce el líquido de la receta en un 20%."
+  },
+  {
+    "ingredient": "Azúcar blanco",
+    "quantity": "100 g",
+    "substitute": "Azúcar moreno",
+    "substituteQuantity": "110 g",
+    "note": "Aporta un sabor más acaramelado."
+  },
+  {
+    "ingredient": "Harina de trigo",
+    "quantity": "100 g",
+    "substitute": "Harina integral",
+    "substituteQuantity": "110 g",
+    "note": "Puede hacer la masa más rústica y menos suave."
+  },
+  {
+    "ingredient": "Harina de trigo",
+    "quantity": "100 g",
+    "substitute": "Harina de avena",
+    "substituteQuantity": "90 g",
+    "note": "Buena para pasteles y tortitas, pero menos elástica."
+  },
+  {
+    "ingredient": "Mantequilla",
+    "quantity": "100 g",
+    "substitute": "Aceite vegetal",
+    "substituteQuantity": "80 g",
+    "note": "Reduce las grasas saturadas pero cambia la textura."
+  },
+  {
+    "ingredient": "Mantequilla",
+    "quantity": "100 g",
+    "substitute": "Margarina vegetal",
+    "substituteQuantity": "100 g",
+    "note": "Perfecto para preparaciones veganas."
+  },
+  {
+    "ingredient": "Leche de vaca",
+    "quantity": "200 ml",
+    "substitute": "Leche de soja",
+    "substituteQuantity": "200 ml",
+    "note": "Alternativa vegetal de sabor neutro."
+  },
+  {
+    "ingredient": "Leche de vaca",
+    "quantity": "200 ml",
+    "substitute": "Leche de almendras",
+    "substituteQuantity": "200 ml",
+    "note": "Añade un sabor ligeramente dulce."
+  },
+  {
+    "ingredient": "Huevos enteros",
+    "quantity": "1 unidad",
+    "substitute": "Semillas de lino molidas + agua",
+    "substituteQuantity": "1 cda semillas + 3 cdas agua",
+    "note": "Dejar reposar 10 minutos para formar un gel."
+  },
+  {
+    "ingredient": "Huevos enteros",
+    "quantity": "1 unidad",
+    "substitute": "Puré de manzana",
+    "substituteQuantity": "50 g",
+    "note": "Ideal en horneados, aporta humedad."
+  },
+  {
+    "ingredient": "Nata para cocinar",
+    "quantity": "100 ml",
+    "substitute": "Leche + mantequilla",
+    "substituteQuantity": "80 ml leche + 20 g mantequilla",
+    "note": "Emula la consistencia de la nata."
+  },
+  {
+    "ingredient": "Yogur natural",
+    "quantity": "100 g",
+    "substitute": "Leche de soja + limón",
+    "substituteQuantity": "100 ml leche + 1 cdta limón",
+    "note": "Dejar reposar 10 minutos para lograr un efecto similar."
+  },
+  {
+    "ingredient": "Pan rallado",
+    "quantity": "50 g",
+    "substitute": "Avena picada",
+    "substituteQuantity": "50 g",
+    "note": "Aumenta la textura y el valor nutricional."
+  },
+  {
+    "ingredient": "Pan rallado",
+    "quantity": "50 g",
+    "substitute": "Galletas saladas trituradas",
+    "substituteQuantity": "50 g",
+    "note": "Da un buen efecto crujiente."
+  },
+  {
+    "ingredient": "Nata montada",
+    "quantity": "100 g",
+    "substitute": "Crema de coco montada",
+    "substituteQuantity": "100 g",
+    "note": "Alternativa vegana con sabor tropical."
+  },
+  {
+    "ingredient": "Chocolate negro",
+    "quantity": "100 g",
+    "substitute": "Cacao puro + mantequilla",
+    "substituteQuantity": "60 g cacao + 40 g mantequilla",
+    "note": "Derretir juntos para lograr una consistencia similar."
+  },
+  {
+    "ingredient": "Crema agria",
+    "quantity": "100 g",
+    "substitute": "Yogur + limón",
+    "substituteQuantity": "100 g yogur + 1 cdta limón",
+    "note": "Perfecto para sustituciones rápidas."
+  },
+  {
+    "ingredient": "Levadura química",
+    "quantity": "1 sobre (16 g)",
+    "substitute": "Bicarbonato + limón",
+    "substituteQuantity": "1 cdta bicarbonato + 1 cda limón",
+    "note": "Mezclar al momento para mantener la efervescencia."
+  },
+  {
+    "ingredient": "Cacao puro",
+    "quantity": "20 g",
+    "substitute": "Chocolate negro rallado",
+    "substituteQuantity": "40 g",
+    "note": "Añade más azúcar y grasa."
+  },
+  {
+    "ingredient": "Pan rallado",
+    "quantity": "50 g",
+    "substitute": "Harina de maíz",
+    "substituteQuantity": "50 g",
+    "note": "Perfecto para rebozados más crujientes."
+  }
+]

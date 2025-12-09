@@ -1,0 +1,11 @@
+export enum CategoryEnum {
+  APPETIZER = 'APPETIZER',
+  FIRST = 'FIRST',
+  SECOND = 'SECOND',
+  SINGLE = 'SINGLE',
+  SIDE = 'SIDE',
+  DESSERT = 'DESSERT',
+  SNACK = 'SNACK',
+  BEVERAGE = 'BEVERAGE',
+  OTHER = 'OTHER'
+}

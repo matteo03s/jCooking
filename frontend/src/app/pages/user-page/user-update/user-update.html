@@ -1,0 +1,65 @@
+<body>
+<div class="container">
+  <div class="card shadow-lg p-4 mx-auto custom-card">
+
+    <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+      <h2 class="text-center">{{ 'USER.UPDATE.TITLE' | translate}}</h2>
+      <app-floating-single-line-input
+        formControlName="name"
+        title="{{ 'USER.UPDATE.NAME' | translate}}"
+        inputType="text"
+        placeholder="{{ 'USER.UPDATE.NAME_PLACEHOLDER' | translate}}">
+      </app-floating-single-line-input>
+
+      <app-floating-single-line-input
+        formControlName="surname"
+        title="{{ 'USER.UPDATE.SURNAME' | translate}}"
+        inputType="text"
+        placeholder="{{ 'USER.UPDATE.SURNAME_PLACEHOLDER' | translate}}">
+      </app-floating-single-line-input>
+
+      <app-floating-single-line-input
+        formControlName="email"
+        [readonly]="true"
+        title="Email"
+        inputType="email"
+        placeholder="{{ 'USER.UPDATE.EMAIL_PLACEHOLDER' | translate}}">
+      </app-floating-single-line-input>
+
+      <app-floating-single-line-input
+        formControlName="username"
+        [readonly]="true"
+        title="Username"
+        inputType="username"
+        placeholder="{{ 'USER.UPDATE.USERNAME_PLACEHOLDER' | translate}}">
+      </app-floating-single-line-input>
+
+      <app-form-dropdown
+        formControlName="gender"
+        title="{{ 'USER.UPDATE.GENDER' | translate}}"
+        [items]="genders">
+      </app-form-dropdown>
+
+      <app-slider
+        formControlName="age"
+        [minutes] = false
+        [maxValue]="100"
+        title="{{ 'USER.UPDATE.AGE' | translate}}">
+      </app-slider>
+
+      <!-- Choose avatar -->
+      <app-avatar-selection
+        [selectedAvatar]="selectedAvatar"
+        (avatarSelected)="selectAvatar($event)">
+      </app-avatar-selection>
+
+      <!-- Submit Button -->
+      <app-submit-button
+        [label]="'💾 ' + ('USER.UPDATE.SUBMIT' | translate )"
+        [disabled]="userStore.isLoading() || userForm.invalid"
+        [isLoading]="userStore.isLoading()">
+      </app-submit-button>
+    </form>
+  </div>
+</div>
+</body>

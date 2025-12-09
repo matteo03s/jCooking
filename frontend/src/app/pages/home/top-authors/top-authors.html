@@ -1,0 +1,23 @@
+@if (!userStore.isLoading() && authors().length === 0) {
+  <div class="no-element">Nessun autore disponibile 😢</div>
+}
+<app-carousel
+  [title]="'HOME.TOP_AUTHORS'"
+  [isLoading]="userStore.isLoading()"
+  [target]="'authors'"
+  [items]="authors()"
+  [itemsPerSlide]="3"
+  [itemTemplate]="authorTpl">
+</app-carousel>
+
+<ng-template #authorTpl let-user>
+  <div class="author-card-carousel">
+    <div class="user-card">
+      <a [routerLink]="['/recipes/user', user.username]">
+        <h5 class="user-name">{{ user.username }}</h5>
+        <img [src]="user.avatar | safeAvatar" class="avatar" />
+      </a>
+      <h5 class="user-name">{{ 'HOME.AUTHOR_MANY' | translate}}: {{ user.recipesCount }}</h5>
+    </div>
+  </div>
+</ng-template>

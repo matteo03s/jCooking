@@ -1,0 +1,142 @@
+[
+  {
+    "ingredient": "Granulated sugar",
+    "quantity": "100 g",
+    "substitute": "Honey",
+    "substituteQuantity": "80 g",
+    "note": "Reduce the liquid in the recipe by 20%."
+  },
+  {
+    "ingredient": "Granulated sugar",
+    "quantity": "100 g",
+    "substitute": "Brown sugar",
+    "substituteQuantity": "110 g",
+    "note": "Provides a more caramelized flavor."
+  },
+  {
+    "ingredient": "All-purpose flour",
+    "quantity": "100 g",
+    "substitute": "Whole wheat flour",
+    "substituteQuantity": "110 g",
+    "note": "Can make the dough more rustic and less soft."
+  },
+  {
+    "ingredient": "All-purpose flour",
+    "quantity": "100 g",
+    "substitute": "Oat flour",
+    "substituteQuantity": "90 g",
+    "note": "Good for cakes and pancakes, but less elastic."
+  },
+  {
+    "ingredient": "Butter",
+    "quantity": "100 g",
+    "substitute": "Vegetable oil",
+    "substituteQuantity": "80 g",
+    "note": "Reduces saturated fats but changes the texture."
+  },
+  {
+    "ingredient": "Butter",
+    "quantity": "100 g",
+    "substitute": "Vegetable margarine",
+    "substituteQuantity": "100 g",
+    "note": "Perfect for vegan preparations."
+  },
+  {
+    "ingredient": "Cow's milk",
+    "quantity": "200 ml",
+    "substitute": "Soy milk",
+    "substituteQuantity": "200 ml",
+    "note": "Neutral-tasting plant-based alternative."
+  },
+  {
+    "ingredient": "Cow's milk",
+    "quantity": "200 ml",
+    "substitute": "Almond milk",
+    "substituteQuantity": "200 ml",
+    "note": "Adds a slightly sweet flavor."
+  },
+  {
+    "ingredient": "Whole eggs",
+    "quantity": "1 piece",
+    "substitute": "Ground flaxseed + water",
+    "substituteQuantity": "1 tbsp seeds + 3 tbsp water",
+    "note": "Let sit for 10 minutes to form a gel."
+  },
+  {
+    "ingredient": "Whole eggs",
+    "quantity": "1 piece",
+    "substitute": "Apple puree",
+    "substituteQuantity": "50 g",
+    "note": "Ideal in baked goods, adds moisture."
+  },
+  {
+    "ingredient": "Cooking cream",
+    "quantity": "100 ml",
+    "substitute": "Milk + butter",
+    "substituteQuantity": "80 ml milk + 20 g butter",
+    "note": "Emulates the consistency of cream."
+  },
+  {
+    "ingredient": "Plain yogurt",
+    "quantity": "100 g",
+    "substitute": "Soy milk + lemon juice",
+    "substituteQuantity": "100 ml milk + 1 tsp lemon juice",
+    "note": "Let sit for 10 minutes to achieve a similar effect."
+  },
+  {
+    "ingredient": "Breadcrumbs",
+    "quantity": "50 g",
+    "substitute": "Chopped oats",
+    "substituteQuantity": "50 g",
+    "note": "Increases texture and nutritional value."
+  },
+  {
+    "ingredient": "Breadcrumbs",
+    "quantity": "50 g",
+    "substitute": "Crushed crackers",
+    "substituteQuantity": "50 g",
+    "note": "Gives a nice crunchy effect."
+  },
+  {
+    "ingredient": "Whipped cream",
+    "quantity": "100 g",
+    "substitute": "Whipped coconut cream",
+    "substituteQuantity": "100 g",
+    "note": "Vegan alternative with a tropical flavor."
+  },
+  {
+    "ingredient": "Dark chocolate",
+    "quantity": "100 g",
+    "substitute": "Unsweetened cocoa + butter",
+    "substituteQuantity": "60 g cocoa + 40 g butter",
+    "note": "Melt together to achieve a similar consistency."
+  },
+  {
+    "ingredient": "Sour cream",
+    "quantity": "100 g",
+    "substitute": "Yogurt + lemon juice",
+    "substituteQuantity": "100 g yogurt + 1 tsp lemon",
+    "note": "Perfect for quick substitutions."
+  },
+  {
+    "ingredient": "Baking powder",
+    "quantity": "1 packet (16 g)",
+    "substitute": "Baking soda + lemon juice",
+    "substituteQuantity": "1 tsp baking soda + 1 tbsp lemon juice",
+    "note": "Mix at the moment to retain fizz."
+  },
+  {
+    "ingredient": "Unsweetened cocoa",
+    "quantity": "20 g",
+    "substitute": "Grated dark chocolate",
+    "substituteQuantity": "40 g",
+    "note": "Adds more sugar and fat."
+  },
+  {
+    "ingredient": "Breadcrumbs",
+    "quantity": "50 g",
+    "substitute": "Cornmeal",
+    "substituteQuantity": "50 g",
+    "note": "Perfect for crunchier coatings."
+  }
+]

@@ -1,0 +1,37 @@
+<div class="container p-4 bg-light rounded-4">
+  <label for=title class="form-label fw-semibold">
+    {{ title }}<span class="text-danger"></span>
+  </label>
+
+  <div class="range-container position-relative">
+    <div class="range-value position-absolute" [ngStyle]="{ left: offset() + 'px' }">
+      @if (minutes) {
+        {{ equivalentValue() }}
+      } @else {
+        {{value()}}
+      }
+      <!--{{ value() }}-->
+    </div>
+    <input
+      type="range"
+      class="form-range"
+      id=title
+      name=title
+      min="0"
+      max="{{maxValue}}"
+      step="1"
+      [value]="value()"
+      (input)="onRangeChange($event)"
+      #rangeInput
+    />
+  </div>
+
+  <div class="d-flex justify-content-between text-muted mt-2">
+    <span>0</span><span>{{maxValue/2}}</span><span>{{maxValue}}</span>
+  </div>
+
+  <div *ngIf="ngControl?.control?.invalid && (ngControl?.control?.touched || ngControl?.control?.dirty)" class="text-danger small mt-1">
+    This field is required.
+  </div>
+</div>
+

@@ -1,0 +1,67 @@
+@if (recipe) {
+  <div class="card custom-shadow p-4 mb-4">
+    <h2 class="card-title">
+      <a [href]="['/recipes/' + recipe.id]">
+        <!--      <a [routerLink]="['/recipes/', recipe.id]">
+        -->        {{ recipe.title }}
+      </a>
+    </h2>
+    <p class="card-text">{{ recipe.category?.name ?? 'other' }}
+    <div class="rating-badge">
+        <span class="star">
+      @if (recipe.averageRating !== 0) {
+        ★ {{ recipe.averageRating | number:'1.1-1' }}
+        @if (recipe.favouritesCount && recipe.favouritesCount > 0) {
+          //
+        }
+      }
+          <!-- Numero di preferiti -->
+          @if (recipe.favouritesCount && recipe.favouritesCount > 0) {
+            ❤ {{ recipe.favouritesCount }} user{{ recipe.favouritesCount > 1 ? 's' : '' }} liked this recipe
+          }
+    </span>
+    </div>
+    <hr>
+    @if (recipeImage() !== null) {
+      <div class="card-image-wrapper mb-3">
+        <img [src]="recipeImage()" [alt]="recipe.title" class="recipe-random-img">
+      </div>
+    }
+
+
+    <div>
+      <span class="fw-bold">🏷️ Tags: </span>
+      @for (tag of recipe.tags; track $index) {
+        <button class="badge" [routerLink]="'/recipes/tag/' + tag"><span>
+          {{ tag }}
+        </span></button>
+      }
+    </div>
+
+    <app-favourite-button
+      [recipeId]="recipe.id!"
+      (favouriteChanged)="onFavouriteChanged($event)"
+    ></app-favourite-button>
+    <!--
+        <button
+          class="fav-btn"
+          [class.active]="isFavourite()"
+          (click)="toggleFavourite()"
+          title="{{ isFavourite() ? 'Remove from favourites' : 'Add to favourites' }}"
+        >
+          @if (!isFavourite()) {
+            <span>🤍</span>
+          } @else {
+            <span>❤️</span>
+          }
+        </button>
+    -->
+    @if (removable) {
+      <hr>
+      <span><h5><strong>
+      <a role="button" class="link-edit" [routerLink]="'/recipes/edit/' + recipe.id">✏️ Modifica</a>
+      <a role="button" class="link-remove" (click)="openModal(recipe.id!)">🗑️ Delete</a>
+      </strong></h5></span>
+    }
+  </div>
+}

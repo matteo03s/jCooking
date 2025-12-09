@@ -1,0 +1,56 @@
+<!-- src/app/components/dynamic-map-form/dynamic-map.html -->
+
+<label class="form-label fw-semibold">{{ title }}</label>
+<div cdkDropList (cdkDropListDropped)="drop($event)">
+  @for (item of items.controls; track $index) {
+    <div class="d-flex flex-column mb-2 p-2 border rounded shadow-sm" cdkDrag>
+      <div class="d-flex align-items-center gap-2">
+
+        <!-- Input Nome -->
+        <input [formControl]="getNameControl(item)"
+               #inputItem
+               class="form-control"
+               placeholder="{{'RECIPE_FORM.INGREDIENTS.NAME_PLACEHOLDER' | translate}}"
+               (blur)="markAsTouched()"
+               [class.is-invalid]="item.get('name')?.invalid && (item.get('name')?.touched || item.get('name')?.dirty)"/>
+
+        <!-- Input Quantità -->
+        <input [formControl]="getQuantityControl(item)"
+               type="number"
+               class="form-control"
+               placeholder="{{'RECIPE_FORM.INGREDIENTS.QUANTITY_PLACEHOLDER' | translate}}"
+               (blur)="markAsTouched()"
+               [class.is-invalid]="item.get('quantity')?.invalid && (item.get('quantity')?.touched || item.get('quantity')?.dirty)"/>
+
+        <!-- Dropdown Unità -->
+        <select [formControl]="getUnitControl(item)"
+                class="form-select"
+                (blur)="markAsTouched()">
+          <option value="" disabled>{{'RECIPE_FORM.INGREDIENTS.UNIT' | translate}}</option>
+          @for (unitOption of unitsForDropdown; track unitOption.key) {
+            <option [value]="unitOption.key">{{ unitOption.label }}</option>
+          }
+        </select>
+
+        <!-- Bottone Rimuovi -->
+        <button
+          type="button"
+          class="btn btn-danger btn-sm flex-shrink-0"
+          (click)="removeItem($index)"
+          title="Remove item">{{'RECIPE_FORM.INGREDIENTS.REMOVE' | translate}}&times;</button>
+
+        <span class="drag-handle ms-2" cdkDragHandle>&#x2630;</span>
+      </div>
+
+      @if (item.get('name')?.hasError('duplicate')) {
+        <div class="text-danger small mt-1">
+          {{'RECIPE_FORM.INGREDIENTS.REMOVE' | translate}}
+        </div>
+      }
+    </div>
+  }
+</div>
+
+<button type="button" class="btn btn-primary mt-3" (click)="addItem()">
+  {{'RECIPE_FORM.INGREDIENTS.ADD' | translate}}
+</button>

@@ -1,0 +1,40 @@
+
+<body>
+<div class="container">
+  <div class="card shadow-lg p-4 mx-auto custom-card">
+    <h2 class="mb-4 text-center custom-title">REVIEW</h2>
+    <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()" class="p-4 space-y-4">
+
+      <!-- Floating Title -->
+      <app-floating-single-line-input
+        formControlName="title"
+        title="{{'REVIEWS.REV_TITLE' | translate}}"
+        inputType="text"
+        placeholder="{{'REVIEWS.REV_TITLE_PLACEHOLDER' | translate}}"
+      ></app-floating-single-line-input>
+
+      <!-- Floating Description -->
+      <app-floating-textarea
+        formControlName="comment"
+        title="{{'REVIEWS.REV_COMMENT' | translate}}"
+        placeholder="{{'REVIEWS.REV_COMMENT_PLACEHOLDER' | translate}}"
+      ></app-floating-textarea>
+
+
+      <!-- Rating -->
+      <app-rating
+        formControlName="rating"
+        [max]="10">
+      </app-rating>
+
+      <!-- Submit Button -->
+      <app-submit-button
+        [label]="'✍️ ' + ('REVIEWS.SUBMIT' | translate)"
+        [disabled]="reviewStore.isLoading() || reviewForm.invalid"
+        [isLoading]="reviewStore.isLoading()">
+      </app-submit-button>
+
+    </form>
+  </div>
+</div>
+</body>

@@ -1,0 +1,11 @@
+<div class="modal-header">
+  <h5 class="modal-title">{{ title | translate }}</h5>
+  <button type="button" class="btn-close" aria-label="Close" (click)="onCancel()"></button>
+</div>
+<div class="modal-body">
+  <p>{{ message | translate }}</p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="link-reverse" (click)="onCancel()">{{ 'MODAL.CANCEL' | translate}}</button>
+  <button type="button" class="link-remove" (click)="onConfirm()">{{ 'MODAL.CONFIRM' | translate}}</button>
+</div>

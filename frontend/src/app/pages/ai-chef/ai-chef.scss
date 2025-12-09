@@ -1,0 +1,151 @@
+.ai-page-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--color-text);
+  min-height: 80vh;
+  position: relative;
+}
+
+.ai-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  animation: fadeIn 0.8s ease-out;
+
+  .icon-wrapper {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0;
+    background-color: var(--color-ai);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    color: var(--color-text-muted);
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+  }
+}
+
+.input-section {
+  display: flex;
+  justify-content: center;
+
+  .form-card {
+    --floating-color: var(--color-ai);
+    --floating-hover: var(--color-ai-hover);
+    background: var(--color-bg-form);
+    width: 100%;
+    max-width: 850px;
+    padding: 2.5rem;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 1.15rem;
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+app-submit-button {
+  --btn-font-size: 1.3rem;
+  display: block;
+  width: 60%;
+  margin-inline: 20%;
+}
+
+.success-message {
+  text-align: center;
+  background-color: rgba(var(--color-ai), 0.15);
+  color: var(--color-ai-hover);
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  border: 1px solid rgba(var(--color-ai), 0.2);
+  animation: slideDown 0.5s ease-out;
+}
+
+.actions-footer {
+  position: sticky;
+  bottom: 20px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background: var(--color-bg-form), 0.5;
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+  a[role="button"] {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 0.8rem;
+    border-radius: 20px;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

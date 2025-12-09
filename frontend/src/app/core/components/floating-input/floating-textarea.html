@@ -1,0 +1,31 @@
+<div class="mb-3">
+  <label class="form-label fw-semibold">{{ title }}</label>
+
+  <div class="form-floating">
+    <textarea
+      class="form-control bg-light"
+      [class.is-invalid]="invalid"
+      [placeholder]="placeholder"
+      [value]="value"
+      [disabled]="disabled"
+      (input)="onInput($event)"
+      (blur)="onBlur()"
+      style="height: 120px"
+    ></textarea>
+    <label>{{ placeholder }}</label>
+  </div>
+
+  @if (invalid) {
+    <div class="text-danger small mt-1">
+      @if (ngControl?.control?.errors?.['required']) {
+        <ng-container>{{'FORM.REQUIRED' | translate}}</ng-container>
+      }
+      @if (ngControl?.control?.errors?.['minlength']) {
+        <ng-container>{{'FORM.MINLENGTH' | translate}}.</ng-container>
+      }
+      @if (ngControl?.control?.errors?.['maxlength']) {
+        <ng-container>{{'FORM.MAXLENGTH' | translate}}</ng-container>
+      }
+    </div>
+  }
+</div>

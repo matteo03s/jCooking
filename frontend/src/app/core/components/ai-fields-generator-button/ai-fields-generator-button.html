@@ -1,0 +1,15 @@
+<div class="d-flex justify-content-end mb-1">
+  <button
+    type="button"
+    class="btn-ai-mini"
+    (click)="handleClick()"
+    [disabled]="disabled || isLoading"
+    [title]="tooltip">
+
+    @if (isLoading) {
+      <span class="spinner-border spinner-border-sm"></span> {{ loadingLabel }}
+    } @else {
+      {{ label }}
+    }
+  </button>
+</div>

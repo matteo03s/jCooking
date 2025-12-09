@@ -1,0 +1,32 @@
+.fav-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: #eaf4ec;
+    transform: scale(1.1);
+  }
+
+  .heart {
+    color: #bbb; // colore del cuore "vuoto"
+  }
+
+  &.active {
+    background: #d3f8d3; // sfondo attivo (verde chiaro)
+    .heart {
+      color: var(--color-accent); // colore del cuore attivo
+    }
+  }
+}

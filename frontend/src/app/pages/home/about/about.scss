@@ -1,0 +1,38 @@
+.about-container {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: 2rem;
+  border-radius: 2rem;
+}
+
+.title {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.section-title {
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  &.ai {
+    color:var(--color-ai);
+  }
+}
+
+.features {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    padding: 0.3rem 0;
+    font-size: 1.1rem;
+  }
+}
+
+strong {
+  color: var(--color-accent);
+}
+
+h5 {
+  font-weight: 550;
+}

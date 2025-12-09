@@ -1,0 +1,66 @@
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 3rem;
+  border: 3px solid var(--color-accent);
+  padding: 0.6rem 1rem;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 10px rgba(69, 122, 104, 0.3);
+  }
+}
+
+.table-responsive {
+  border-radius: 3rem;
+  overflow: hidden;
+  margin-top: 1rem;
+
+  .equivalences-card {
+    width: 100%;
+    background-color: var(--color-bg-form);
+    border: 3px solid var(--color-accent);
+    border-radius: 1.5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+    border-collapse: separate;
+    border-spacing: 0;
+
+    th, td {
+      padding: 1rem 1.25rem;
+    }
+
+    th {
+      background-color: var(--color-accent);
+      color: var(--color-bg);
+      text-align: left;
+    }
+
+    td {
+      color: #2f3b35;
+    }
+
+    tbody tr:hover td {
+      background-color: rgba(69, 122, 104, 0.05);
+    }
+
+    thead th:first-child {
+      border-top-left-radius: 1.5rem;
+    }
+    thead th:last-child {
+      border-top-right-radius: 1.5rem;
+    }
+
+    tbody tr:last-child td:first-child {
+      border-bottom-left-radius: 1.3rem;
+    }
+    tbody tr:last-child td:last-child {
+      border-bottom-right-radius: 1.3rem;
+    }
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<div class="equivalences container py-5">
+  <h1 class="text-center mb-4">{{'EQUIVALENCES.TITLE' | translate}}</h1>
+
+  @if (loading()) {
+    <p class="text-center text-muted">{{'EQUIVALENCES.LOADING' | translate}}</p>
+  }
+  @else if (error()) {
+    <p class="text-center text-danger">{{ error() }}</p>
+  }
+  @else {
+    <app-equivalences-table
+      [data]="equivalences()"
+      placeholder="{{'EQUIVALENCES.SEARCH_PLACEHOLDER' | translate}}">
+    </app-equivalences-table>
+  }
+</div>

@@ -1,0 +1,63 @@
+@if (recipe) {
+  <div class="card custom-shadow p-4 mb-4">
+    <h2 class="card-title">
+      <a [href]="['/recipes/' + recipe.id]">
+        <!--      <a [routerLink]="['/recipes/', recipe.id]">
+        -->        {{ recipe.title }}
+      </a>
+    </h2>
+    <p class="card-text">{{ recipe.category?.name ?? 'other' }}
+    <div class="rating-badge">
+        <span class="star">
+      @if (recipe.averageRating !== 0) {
+        ★ {{ recipe.averageRating | number:'1.1-1' }}
+        @if (recipe.favouritesCount && recipe.favouritesCount > 0) {
+          //
+        }
+      }
+          <!-- Numero di preferiti
+          @if (recipe.favouritesCount && recipe.favouritesCount > 0) {
+            ❤ {{ recipe.favouritesCount }} user{{ recipe.favouritesCount > 1 ? 's' : '' }} liked this recipe
+          }-->
+          @if (recipe.favouritesCount === 0) {
+            {{ 'RECIPE.LIKE.NO_LIKES' | translate }}
+          }@else if (recipe.favouritesCount === 1) {
+            {{ 'RECIPE.LIKE.LIKED_BY_ONE' | translate }}
+          }@else {
+            {{ 'RECIPE.LIKE.LIKED_BY_MANY' | translate: { count: recipe.favouritesCount } }}
+          }
+    </span>
+    </div>
+    <hr>
+      <div class="card-image-wrapper mb-3">
+        <img [src]="recipeImage() || 'assets/images/placeholder.jpg'" [alt]="recipe.title" class="recipe-random-img">
+      </div>
+
+
+    <div>
+      <span class="fw-bold">🏷️ Tags: </span>
+      @for (tag of recipe.tags; track $index) {
+        <button class="badge" [routerLink]="'/recipes/tag/' + tag"><span>
+          {{ tag }}
+        </span></button>
+      }
+    </div>
+
+    <hr>
+    <span><h5><strong> 👩‍🍳 {{ 'RECIPE.AUTHOR' | translate}}: </strong>
+      @if (recipe?.username) {
+        <a [routerLink]="['/recipes/user', recipe.username]" class="link-author">
+        {{ recipe.username }}
+      </a>
+      } @else {
+        {{ 'RECIPE.NO_AUTHOR' | translate}}
+      }
+</h5>
+  </span>
+
+    <app-favourite-button
+      [recipeId]="recipe.id!"
+      (favouriteChanged)="onFavouriteChanged($event)"
+    ></app-favourite-button>
+  </div>
+}

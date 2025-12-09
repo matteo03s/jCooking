@@ -1,0 +1,118 @@
+<body>
+<div class="container">
+  <div class="card shadow-lg p-4 mx-auto custom-card">
+    <h2 class="mb-4 text-center custom-title">
+      {{ (recipe ? 'RECIPE_FORM.EDIT_TITLE' : 'RECIPE_FORM.CREATE_TITLE'  )| translate}}
+    </h2>
+    <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+
+      <!-- Floating Title -->
+      <app-floating-single-line-input
+        formControlName="title"
+        title="{{ 'RECIPE_FORM.TITLE' | translate}}"
+        inputType="text"
+        placeholder="{{ 'RECIPE_FORM.TITLE_PLACEHOLDER' | translate}}"
+      ></app-floating-single-line-input>
+
+      <!-- Floating Servings -->
+      <app-floating-single-line-input
+        formControlName="servings"
+        title="{{ 'RECIPE_FORM.SERVINGS' | translate}}"
+        inputType="number"
+        placeholder="{{ 'RECIPE_FORM.SERVINGS_PLACEHOLDER' | translate}}"
+      ></app-floating-single-line-input>
+
+      <!-- Floating Description -->
+      <app-ai-fields-generator-button
+        label="✨ {{ 'FIELDS_GENERATOR.DESCRIPTION.LABEL' | translate}}"
+        loadingLabel="{{ 'FIELDS_GENERATOR.DESCRIPTION.LOADING' | translate}}"
+        [isLoading]="aiChefStore.isGeneratingDescription()"
+        [disabled]="!recipeForm.get('title')?.value"
+        tooltip="{{ 'FIELDS_GENERATOR.DESCRIPTION.TOOLTIP' | translate}}"
+        (action)="askAiDescription()">
+      </app-ai-fields-generator-button>
+      <app-floating-textarea
+        formControlName="description"
+        title="{{ 'RECIPE_FORM.DESCRIPTION' | translate}}"
+        placeholder="{{ 'RECIPE_FORM.DESCRIPTION_PLACEHOLDER' | translate}}"
+      ></app-floating-textarea>
+
+      <!-- Level Dropdown -->
+      <app-form-dropdown
+        formControlName="level"
+        title="{{'LEVEL.TITLE'}}"
+        [items]="levels"
+      ></app-form-dropdown>
+
+      <!-- Category Dropdown -->
+      <app-form-dropdown
+        formControlName="category"
+        title="{{'CATEGORY.TITLE'}}"
+        [items]="categories"
+      ></app-form-dropdown>
+
+
+      <!-- Slider Section -->
+      <div class="slider-group rounded-4 p-4">
+        <!-- Slider PrepTime -->
+        <app-slider
+          formControlName="prepTime"
+          [maxValue]=180
+          [title]="( prepTitle | translate)">
+        </app-slider>
+        <hr class="group-separator">
+        <!-- Slider CookTime -->
+        <app-slider
+          formControlName="cookTime"
+          [maxValue]=180
+          [title]="( cookTitle | translate)">
+        </app-slider>
+      </div>
+      <hr>
+
+      <!-- Dynamic Steps -->
+      <app-ai-fields-generator-button
+        label="👨‍🍳 {{'FIELDS_GENERATOR.STEPS.LABEL' | translate}}"
+        loadingLabel="{{'FIELDS_GENERATOR.STEPS.LOADING' | translate}}"
+        [isLoading]="aiChefStore.isGeneratingSteps()"
+        [disabled]="!recipeForm.get('title')?.value || !recipeForm.get('ingredients')?.value"
+        tooltip="{{'FIELDS_GENERATOR.STEPS.TOOLTIP' | translate}}"
+        (action)="askAiSteps()">
+      </app-ai-fields-generator-button>
+      <app-dynamic-list-form
+        formControlName="steps"
+        title="{{ 'RECIPE_FORM.STEPS' | translate}}"
+      ></app-dynamic-list-form>
+
+      <!-- Dynamic Tags -->
+      <app-ai-fields-generator-button
+        label="🏷️ {{ 'FIELDS_GENERATOR.TAGS.LABEL' | translate}}"
+        loadingLabel="{{ 'FIELDS_GENERATOR.TAGS.LOADING' | translate}}"
+        [isLoading]="aiChefStore.isGeneratingTags()"
+        [disabled]="!recipeForm.get('title')?.value"
+        tooltip="{{ 'FIELDS_GENERATOR.TAGS.TOOLTIP' | translate}}"
+        (action)="askAiTags()">
+      </app-ai-fields-generator-button>
+      <app-dynamic-list-form
+        formControlName="tags"
+        title="Tags"
+      ></app-dynamic-list-form>
+
+      <!-- Dynamic Ingredients -->
+      <app-dynamic-map-form
+        formControlName="ingredients"
+        title="{{ 'RECIPE_FORM.INGREDIENTS.TITLE' | translate}}"
+      ></app-dynamic-map-form>
+
+      <!-- Submit -->
+      <app-submit-button
+        [label]="recipe ? ('💾 ' + ('RECIPE_FORM.UPDATE' | translate)) : ('✍️ ' +  ('RECIPE_FORM.SUBMIT' | translate))"
+        [disabled]="recipeForm.invalid"
+        [isLoading]="recipeStore.isLoading()">
+      </app-submit-button>
+
+    </form>
+  </div>
+</div>
+
+</body>

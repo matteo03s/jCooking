@@ -1,0 +1,32 @@
+.lang-switcher {
+  // margin-inline: 15px; // Consiglio: Sposta questo margine nel componente padre (Navbar) per flessibilità
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-bg);
+  padding: 4px;
+  border-radius: 50px;
+
+  button {
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer; // Aggiunto per UX
+
+    &:hover:not(.lang-btn) {
+      background-color: rgba(0, 0, 0, 0.05);
+      color: var(--color-accent);
+    }
+
+    &.lang-btn {
+      background-color: var(--color-accent);
+      color: var(--color-bg);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      cursor: default;
+    }
+  }
+}

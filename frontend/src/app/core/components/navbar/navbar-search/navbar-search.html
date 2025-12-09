@@ -1,0 +1,40 @@
+<form class="navbar-search d-flex align-items-center gap-2" (ngSubmit)="onSearch()">
+  <!-- Input ricerca -->
+  <input
+    [type]="searchFilter === 'averageRating' ? 'number' : 'text'"
+    class="search-input"
+    [placeholder]="
+      searchFilter === 'averageRating'
+        ? ('SEARCH.RATE_PLACEHOLDER' | translate)
+        : ('SEARCH.PLACEHOLDER' | translate)
+    "
+    [(ngModel)]="searchTerm"
+    name="searchTerm"
+    [min]="searchFilter === 'averageRating' ? 0 : null"
+    [max]="searchFilter === 'averageRating' ? 10 : null"
+    [step]="searchFilter === 'averageRating' ? 0.5 : null"
+  />
+
+  <!-- Dropdown filtro -->
+  <div class="filter-dropdown">
+    <button class="custom-dropdown-btn" type="button" (click)="toggleDropdown()">
+      {{ getCurrentFilterLabel() | translate }} ▾
+
+    </button>
+
+    <ul class="custom-dropdown-menu" [class.show]="dropdownOpen()">
+      @for (option of filters; track $index) {
+        <li>
+          <a href="#" class="custom-dropdown-item" (click)="selectFilter(option.value); $event.preventDefault()">
+            {{ option.label | translate}}
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+
+  <!-- Bottone cerca -->
+  <button type="submit" class="btn search-btn">
+      🔍 {{ 'SEARCH.SUBMIT' | translate }}
+  </button>
+</form>

@@ -1,0 +1,64 @@
+<h1 class="text-center">{{ title | translate}}
+  @if (isLoading) {<app-spinner/>}
+</h1>
+
+<div class="carousel slide"
+     [id]="target"
+     data-bs-ride="carousel"
+     data-bs-interval="3000"
+     data-bs-pause="hover">
+
+  <button
+    class="carousel-control-prev"
+    type="button"
+    [attr.data-bs-target]="'#' + target"
+    data-bs-slide="prev"
+    aria-label="Previous"
+  >
+
+    <span class="custom-arrow custom-prev" aria-hidden="true">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </button>
+
+  <button
+    class="carousel-control-next"
+    type="button"
+    [attr.data-bs-target]="'#' + target"
+    data-bs-slide="next"
+    aria-label="Next">
+
+    <span class="custom-arrow custom-next" aria-hidden="true">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </button>
+
+
+  <!-- Slides -->
+  <div class="carousel-inner">
+
+    @for (chunk of chunkItems(); track $index) {
+      <div class="carousel-item" [class.active]="$index === 0">
+
+        <div class="d-flex justify-content-center gap-3">
+
+          @for (item of chunk; track item) {
+
+            <ng-container
+              [ngTemplateOutlet]="itemTemplate"
+              [ngTemplateOutletContext]="{ $implicit: item }">
+            </ng-container>
+
+          }
+
+        </div>
+
+      </div>
+    }
+
+  </div>
+</div>

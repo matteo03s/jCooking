@@ -1,0 +1,30 @@
+@if (review) {
+  <div class="card custom-shadow p-4 mb-3">
+    <div class="review-header">
+      <div class="review-author">
+        👤 <strong>{{ review.author?.username || 'Anonimo' }}</strong>
+      </div>
+      <div class="review-date">{{ review.uploadDate | date: 'mediumDate' }}</div>
+    </div>
+
+    <h5 class="review-title">{{ review.title }}</h5>
+    <p class="review-comment">{{ review.comment }}</p>
+
+    <div class="review-footer">
+      <div class="review-rating">
+        ★ {{ review.rating }}/10
+      </div>
+      @if (review.recipe) {
+        <a [routerLink]="['/recipes/', review.recipe.id]" class="review-recipe-link">
+          <strong>{{ review.recipe.title }}</strong>
+        </a>
+      }
+    </div>
+      @if (removable) {
+        <h5 class="delete-center"><strong>
+      <a role="button" class="link-remove" (click)="openModal(review.id!)">🗑️ Delete</a>
+      </strong></h5>
+      }
+  </div>
+}
+

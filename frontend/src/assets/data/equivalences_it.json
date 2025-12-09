@@ -1,0 +1,142 @@
+[
+  {
+    "ingredient": "Zucchero semolato",
+    "quantity": "100 g",
+    "substitute": "Miele",
+    "substituteQuantity": "80 g",
+    "note": "Riduci i liquidi nella ricetta del 20%."
+  },
+  {
+    "ingredient": "Zucchero semolato",
+    "quantity": "100 g",
+    "substitute": "Zucchero di canna",
+    "substituteQuantity": "110 g",
+    "note": "Dona un sapore più caramellato."
+  },
+  {
+    "ingredient": "Farina 00",
+    "quantity": "100 g",
+    "substitute": "Farina integrale",
+    "substituteQuantity": "110 g",
+    "note": "Può rendere l'impasto più rustico e meno soffice."
+  },
+  {
+    "ingredient": "Farina 00",
+    "quantity": "100 g",
+    "substitute": "Farina d'avena",
+    "substituteQuantity": "90 g",
+    "note": "Ottima per torte e pancake, ma meno elastica."
+  },
+  {
+    "ingredient": "Burro",
+    "quantity": "100 g",
+    "substitute": "Olio vegetale",
+    "substituteQuantity": "80 g",
+    "note": "Riduce i grassi saturi ma cambia la consistenza."
+  },
+  {
+    "ingredient": "Burro",
+    "quantity": "100 g",
+    "substitute": "Margarina vegetale",
+    "substituteQuantity": "100 g",
+    "note": "Perfetto per preparazioni vegane."
+  },
+  {
+    "ingredient": "Latte vaccino",
+    "quantity": "200 ml",
+    "substitute": "Latte di soia",
+    "substituteQuantity": "200 ml",
+    "note": "Alternativa vegetale dal gusto neutro."
+  },
+  {
+    "ingredient": "Latte vaccino",
+    "quantity": "200 ml",
+    "substitute": "Latte di mandorla",
+    "substituteQuantity": "200 ml",
+    "note": "Aggiunge un sapore leggermente dolce."
+  },
+  {
+    "ingredient": "Uova intere",
+    "quantity": "1 uovo",
+    "substitute": "Semi di lino macinati + acqua",
+    "substituteQuantity": "1 cucchiaio semi + 3 cucchiai acqua",
+    "note": "Lascia riposare 10 minuti per formare un gel."
+  },
+  {
+    "ingredient": "Uova intere",
+    "quantity": "1 uovo",
+    "substitute": "Purea di mele",
+    "substituteQuantity": "50 g",
+    "note": "Ideale nei prodotti da forno, aggiunge umidità."
+  },
+  {
+    "ingredient": "Panna da cucina",
+    "quantity": "100 ml",
+    "substitute": "Latte + burro",
+    "substituteQuantity": "80 ml latte + 20 g burro",
+    "note": "Emula la consistenza della panna."
+  },
+  {
+    "ingredient": "Yogurt bianco",
+    "quantity": "100 g",
+    "substitute": "Latte di soia + succo di limone",
+    "substituteQuantity": "100 ml latte + 1 cucchiaino limone",
+    "note": "Lascia riposare 10 minuti per ottenere un effetto simile."
+  },
+  {
+    "ingredient": "Pangrattato",
+    "quantity": "50 g",
+    "substitute": "Fiocchi d'avena tritati",
+    "substituteQuantity": "50 g",
+    "note": "Aumenta la consistenza e il valore nutrizionale."
+  },
+  {
+    "ingredient": "Pangrattato",
+    "quantity": "50 g",
+    "substitute": "Cracker sbriciolati",
+    "substituteQuantity": "50 g",
+    "note": "Dona un piacevole effetto croccante."
+  },
+  {
+    "ingredient": "Panna montata",
+    "quantity": "100 g",
+    "substitute": "Crema di cocco montata",
+    "substituteQuantity": "100 g",
+    "note": "Alternativa vegana dal sapore tropicale."
+  },
+  {
+    "ingredient": "Cioccolato fondente",
+    "quantity": "100 g",
+    "substitute": "Cacao amaro + burro",
+    "substituteQuantity": "60 g cacao + 40 g burro",
+    "note": "Sciogli insieme per ottenere una consistenza simile."
+  },
+  {
+    "ingredient": "Panna acida",
+    "quantity": "100 g",
+    "substitute": "Yogurt + succo di limone",
+    "substituteQuantity": "100 g yogurt + 1 cucchiaino limone",
+    "note": "Perfetto per sostituzioni veloci."
+  },
+  {
+    "ingredient": "Lievito per dolci",
+    "quantity": "1 bustina (16 g)",
+    "substitute": "Bicarbonato + succo di limone",
+    "substituteQuantity": "1 cucchiaino bicarbonato + 1 cucchiaio limone",
+    "note": "Mescola al momento per mantenere l'effervescenza."
+  },
+  {
+    "ingredient": "Cacao amaro",
+    "quantity": "20 g",
+    "substitute": "Cioccolato fondente grattugiato",
+    "substituteQuantity": "40 g",
+    "note": "Aggiunge più zuccheri e grassi."
+  },
+  {
+    "ingredient": "Pangrattato",
+    "quantity": "50 g",
+    "substitute": "Farina di mais",
+    "substituteQuantity": "50 g",
+    "note": "Perfetto per panature più croccanti."
+  }
+]

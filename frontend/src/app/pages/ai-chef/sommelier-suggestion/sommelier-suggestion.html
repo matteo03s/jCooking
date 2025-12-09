@@ -1,0 +1,17 @@
+<div class="sommelier-box">
+  <h3 class="title">🍷 {{ 'AI.SOMMELIER.TITLE' | translate }}</h3>
+
+  <div class="cards-container">
+    @for (bev of beverages; track $index) {
+      <div class="beverage-card">
+        <div class="icon">{{ getIcon(bev.type) }}</div>
+        <div class="content">
+          <h4>{{ bev.name }}</h4>
+          <span class="type-badge">{{ bev.type }}</span>
+          <p class="reason">{{ bev.pairingReason }}</p>
+          <div class="temp">🌡️ {{ 'AI.SOMMELIER.TEMP' | translate }}: {{ bev.servingTemp }}</div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

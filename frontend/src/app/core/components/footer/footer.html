@@ -1,0 +1,70 @@
+<footer class="footer">
+  <div class="container py-5">
+    <div class="row gy-4">
+      <!-- Mappa del sito -->
+      <div class="col-12 col-md-3">
+        <h5>{{ 'FOOTER.MAP' | translate }}</h5>
+        <ul class="footer-links">
+          <strong>
+
+          <li><a href="/">🏠 Home</a></li>
+          <li><a href="/recipes">🍽️ {{ 'FOOTER.RECIPES' | translate }}</a></li>
+          <li><a href="/categories">📂 {{ 'FOOTER.CATEGORIES' | translate }}</a></li>
+          <li><a href="/equivalences">🔄 {{ 'FOOTER.EQUIVALENCES' | translate }}</a></li>
+          <li><a href="/about">ℹ️ {{ 'FOOTER.ABOUT' | translate }}</a></li>
+          <li><a href="/contact">📞 {{ 'FOOTER.CONTACT' | translate }}</a></li>
+          </strong>
+        </ul>
+      </div>
+
+      <!-- About -->
+      <div class="col-12 col-md-3">
+        <h5>{{ 'FOOTER.ABOUT' | translate }}</h5>
+        <p>
+          {{ 'FOOTER.TEXT' | translate }}
+        </p>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-12 col-md-3">
+        <h5>{{ 'FOOTER.CONTACT' | translate }}</h5>
+        <ul class="footer-links">
+          <li><i class="bi bi-envelope"></i> <a href="mailto:info@jCooking.it">info.jCooking&#64;gmail.it</a></li>
+          <li><i class="bi bi-telephone"></i> <a href="tel:+390000000000">+39 000 000 0000</a></li>
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div class="col-12 col-md-3">
+        <h5>Social</h5>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://www.youtube.com/" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-4" />
+
+    <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="text-center text-md-start mb-3 mb-md-0">
+        <p>{{ 'FOOTER.RIGHTS' | translate }}</p>
+      </div>
+
+      <div class="text-center text-md-end">
+        <p>{{ 'FOOTER.CREATED' | translate}} <i class="bi bi-heart-fill"></i> {{ 'FOOTER.BY' | translate}} <strong>Matteo</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-separator wave-bottom">
+    <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M0,0 C360,64 1080,120 1440,64 L1440,120 L0,120 Z"
+        fill="var(--color-bg)"
+      ></path>
+    </svg>
+  </div>
+</footer>

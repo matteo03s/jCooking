@@ -1,0 +1,39 @@
+<!--<h1 class="text-center">Choose your avatar</h1>
+<div class="avatar-grid">
+  <div class="avatars">
+    @for (avatar of avatars; track $index) {
+      <div (click)="selectAvatar(avatar)"
+           [class.selected]="avatar === selectedAvatar">
+        <img [src]="'assets/avatars/' + avatar" [alt]="avatar">
+      </div>
+    }
+  </div>
+</div>
+-->
+<!-- avatar-selection.html -->
+<div class="avatar-selection-container">
+
+  <app-carousel
+    title='REGISTER.AVATAR'
+    target="avatarCarousel"
+    [items]="avatars"
+    [itemsPerSlide]="4"
+    [itemTemplate]="avatarTemplate">
+  </app-carousel>
+
+  <!-- Template del singolo Avatar -->
+  <ng-template #avatarTemplate let-avatar>
+    <div class="avatar-item"
+         (click)="selectAvatar(avatar)"
+         [class.selected]="avatar === selectedAvatar">
+
+      <img [src]="'assets/avatars/' + avatar" [alt]="avatar">
+
+      <!-- Opzionale: Icona di spunta se selezionato -->
+      @if (avatar === selectedAvatar) {
+        <div class="check-icon">✓</div>
+      }
+    </div>
+  </ng-template>
+
+</div>

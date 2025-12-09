@@ -1,0 +1,60 @@
+<h2 class="recipe-list-title">
+  @if (tag) {
+    {{ 'RECIPES.TAG' | translate }}
+    {{ tag }}
+  } @else if (username) {
+    {{ 'RECIPES.CREATED' | translate }}
+    {{ username }}
+  } @else if (category) {
+    {{ category }}s
+  } @else if (my) {
+    {{ 'RECIPES.MY' | translate }}
+  } @else {
+    {{ 'RECIPES.ALL' | translate }}
+  }
+  <br>
+  @if (recipeStore.isLoading()) {
+    <app-spinner/>
+  }
+</h2>
+
+@if (!recipeStore.isLoading() && recipes().length === 0) {
+  <div class="no-element">
+    {{ 'RECIPE.NO_ELEMENT' | translate }} 😢</div>
+}
+
+<div class="recipe-list">
+  @for (rec of recipes(); track rec.id) {
+    <div class="recipe-card">
+
+      <app-simple-recipe-card
+        [recipe]="rec"
+        [removable]="my"
+      ></app-simple-recipe-card>
+
+
+      <!--
+      <app-recipe-card
+      [recipe]="rec"
+      [removable]="my"
+    ></app-recipe-card>
+      -->
+    </div>
+  }
+</div>
+
+@if (!recipeStore.isLastPage() && !recipeStore.isLoading()) {
+  <div class="d-flex justify-content-center my-4">
+    <button
+      class="btn-load-more"
+      (click)="loadMore()"
+      [disabled]="recipeStore.isLoadingMore()">
+
+      @if (recipeStore.isLoadingMore()) {
+        <app-spinner> {{ 'RECIPES.LOADING' | translate }}Loading...</app-spinner>
+      } @else {
+        👇 {{ 'RECIPES.LOAD' | translate }}
+      }
+    </button>
+  </div>
+}

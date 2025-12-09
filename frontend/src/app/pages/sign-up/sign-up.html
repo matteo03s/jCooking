@@ -1,0 +1,100 @@
+<body>
+<div class="container">
+  <div class="card shadow-lg p-4 mx-auto custom-card">
+    <h1 class="mb-4 text-center custom-title">{{ 'REGISTER.TITLE' | translate}}</h1>
+
+    <hr>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+      <h2 class="text-center">{{ 'REGISTER.USER.TITLE' | translate}}</h2>
+      <!-- Floating Name -->
+      <app-floating-single-line-input
+      formControlName="name"
+      title="{{ 'REGISTER.USER.NAME' | translate}}"
+      inputType="text"
+      placeholder="{{ 'REGISTER.USER.NAME_PLACEHOLDER' | translate}}"
+      ></app-floating-single-line-input>
+
+      <!-- Floating Surname -->
+      <app-floating-single-line-input
+      formControlName="surname"
+      title="{{ 'REGISTER.USER.SURNAME' | translate}}"
+      inputType="text"
+      placeholder="{{ 'REGISTER.USER.SURNAME_PLACEHOLDER' | translate}}"
+      ></app-floating-single-line-input>
+
+      <!-- Floating Email -->
+      <app-floating-single-line-input
+        formControlName="email"
+        title="{{ 'REGISTER.USER.EMAIL' | translate}}"
+        inputType="email"
+        placeholder="{{ 'REGISTER.USER.EMAIL_PLACEHOLDER' | translate}}"
+      ></app-floating-single-line-input>
+
+      <!-- Gender Dropdown -->
+      <app-form-dropdown
+      formControlName="gender"
+      title="{{ 'REGISTER.USER.GENDER.TITLE' | translate}}"
+      [items]="genders"
+      ></app-form-dropdown>
+
+      <!-- Age Slider -->
+      <app-slider
+      [minutes] = false
+      formControlName="age"
+      [maxValue] = 100
+      title="{{ 'REGISTER.USER.AGE' | translate}}">
+      </app-slider>
+
+    </form>
+    <hr>
+
+    <!-- Choose avatar -->
+    <app-avatar-selection
+      [selectedAvatar]="selectedAvatar"
+      (avatarSelected)="selectAvatar($event)">
+    </app-avatar-selection>
+
+    <hr>
+
+    <form [formGroup]="credentialsForm" (ngSubmit)="onSubmit()">
+        <h2 class="text-center">{{ 'REGISTER.CREDENTIALS.TITLE' | translate}}</h2>
+
+      <!-- Floating Username -->
+      <app-floating-single-line-input
+        formControlName="username"
+        title="{{ 'REGISTER.CREDENTIALS.USERNAME' | translate}}"
+        inputType="text"
+        placeholder="{{ 'REGISTER.CREDENTIALS.USERNAME_PLACEHOLDER' | translate}}"
+      ></app-floating-single-line-input>
+
+      <!-- Floating Psssword -->
+      <app-floating-single-line-input
+        formControlName="password"
+        title="{{ 'REGISTER.CREDENTIALS.PASSWORD' | translate}}"
+        inputType="password"
+        placeholder="{{ 'REGISTER.CREDENTIALS.PASSWORD_PLACEHOLDER' | translate}}"
+      ></app-floating-single-line-input>
+
+
+      <!-- Floating confirm Password -->
+      <app-floating-single-line-input
+        formControlName="confirmPassword"
+        title="{{ 'REGISTER.CREDENTIALS.CONFIRM' | translate}}"
+        inputType="password"
+        placeholder="{{ 'REGISTER.CREDENTIALS.CONFIRM_PLACEHOLDER' | translate}}">
+      </app-floating-single-line-input>
+
+
+      <!-- Submit Button -->
+      <app-submit-button
+        [label]="'👤 ' + ( 'REGISTER.SUBMIT' | translate)"
+        [disabled]="authStore.isLoading() || userForm.invalid || credentialsForm.invalid"
+        [isLoading]="authStore.isLoading()">
+      </app-submit-button>
+
+    </form>
+  </div>
+</div>
+
+</body>

@@ -1,0 +1,17 @@
+<div
+  class="dropdown custom-dropdown"
+  [ngClass]="{
+          'btn-group dropup': placement === 'top',
+          'btn-group dropstart': placement === 'left',
+          'btn-group dropend': placement === 'right',
+        }"
+>
+  <button class="btn dropdown-toggle custom-dropdown-btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    {{ title | translate }}
+  </button>
+  <ul class="dropdown-menu custom-dropdown-menu">
+    @for (item of items; track $index) {
+      <li><a class="dropdown-item custom-dropdown-item" [href]="item.value"> {{ item.label | translate }}</a></li>
+    }
+  </ul>
+</div>

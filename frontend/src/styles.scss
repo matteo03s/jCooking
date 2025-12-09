@@ -1,0 +1,111 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --color-bg: #eee0ca;
+  --color-surface: #f5efe1;
+  --color-text: #2b2b2b;
+  --color-text-muted: #8c929c;//#9ca3af#555555
+  --color-border: #ced4da;//#c8b89d;
+  --color-bg-form: #e9ecef;
+  --color-ai: #897198;//#880124;
+  --color-ai-hover: #634d70;
+  --grad-ai: linear-gradient(135deg, var(--color-accent) 0%, var(--color-ai) 100%);
+//  --color-bg-form: #f8f9fa;
+/*alternative colore ai
+  #355070
+  #4A6fa5
+  #C06C47
+  #C06C47
+  #7B68EE
+  #6D597A
+  #880124
+  #71011c
+ */
+  --color-accent: #457a68;
+  --color-accent-hover: #366253;
+
+  --color-footer-bg: #2f4f46;
+  --color-footer-text: #eee0ca;
+
+  --color-highlight: #e85d3d; // opzionale, per badge o bottoni speciali
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+app-root {
+  background-color: var(--color-bg); // colore chiaro-beige, ad esempio
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+
+
+.no-element {
+  color: #6c757d;
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
+
+.link-animated {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.4em 0.6em;
+  border-radius: 6px;
+  transition: color 0.3s ease;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 2px solid currentColor;
+    transition: all 0.3s ease;
+    border-color: transparent;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    border-bottom: none;
+    border-right: none;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+    border-top: none;
+    border-left: none;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+    border-color: currentColor;
+  }
+}
+
+/* Varianti di colore */
+.link-author {
+  @extend .link-animated;
+  color: var(--color-accent);
+}
+.link-edit {
+  @extend .link-animated;
+  color: var(--color-accent);
+}
+.link-remove {
+  @extend .link-animated;
+  color: #c0392b;
+  float: right;
+}

@@ -1,0 +1,43 @@
+h1 {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 56px;
+  height: 56px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+
+  background: var(--color-accent);
+  color: var(--color-bg);
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  transition: transform .15s ease, background-color .15s ease;
+}
+
+/* hover */
+.carousel-control-prev:hover .custom-arrow,
+.carousel-control-next:hover .custom-arrow {
+  transform: scale(1.12);
+  background: var(--color-accent-hover);
+}
+
+/* posizionamento */
+.carousel-control-prev { left: 3%; }
+.carousel-control-next { right: 3%; }

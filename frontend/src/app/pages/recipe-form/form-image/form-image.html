@@ -1,0 +1,54 @@
+<h1 class="text-center mb-3 mt-3">{{'IMAGE_FORM.TITLE' | translate}}</h1>
+
+<div class="upload-container">
+  <!--
+<input type="file" (change)="onFileSelected($event)" accept="image/*" #fileInput>
+-->
+  <div class="custom-file-input-wrapper">
+
+    <input
+      type="file"
+      id="hiddenFileInput"
+      (change)="onFileSelected($event)"
+      accept="image/*"
+      class="d-none"
+      #fileInput
+    >
+
+    <label for="hiddenFileInput" class="browse-btn">
+      📂 {{ 'IMAGE_FORM.BROWSE' | translate }}
+    </label>
+
+    <span class="file-name-text">
+      @if (selectedFiles.length > 0) {
+        {{ selectedFiles[0].name }}
+      } @else {
+        {{ 'IMAGE_FORM.NO_FILE' | translate }}
+      }
+    </span>
+  </div>
+
+  <!-- Submit Button -->
+  <app-submit-button
+    (click)="uploadImages(recipeId)"
+    [label]="selectedFiles.length === 0
+      ? ('IMAGE_FORM.SELECT' | translate)
+      :  ('IMAGE_FORM.UPLOAD_ONE' | translate)"
+    [disabled]="recipeStore.isLoading() || !selectedFiles.length"
+    [isLoading]="recipeStore.isLoading()">
+  </app-submit-button>
+
+  <a role="button" class="link-edit" [routerLink]="'/recipes/' + recipeId">
+    {{'IMAGE_FORM.VISUALIZE' | translate}}
+  </a>
+</div>
+@if (recipeImages() !== null && recipeImages().length > 0) {
+  <div class="info-block mb-5 mt-5">
+    <app-image-carousel
+      title = "{{'IMAGE_FORM.IMAGE_CAR' | translate}}"
+      [images] = recipeImages()
+      [removable] = true
+      [recipeId]="recipeId"
+    ></app-image-carousel>
+  </div>
+}

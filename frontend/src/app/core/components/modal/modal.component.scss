@@ -1,0 +1,62 @@
+.modal {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.link-animated {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.4em 0.6em;
+  border-radius: 6px;
+  transition: color 0.3s ease;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 2px solid currentColor; // usa il colore del testo
+    transition: all 0.3s ease;
+    border-color: transparent; // di default invisibile
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    border-bottom: none;
+    border-right: none;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+    border-top: none;
+    border-left: none;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+    border-color: currentColor; // mostra il bordo del colore del testo
+  }
+}
+
+.link-remove, .link-reverse{
+  font-size: 1.25rem;
+  border: none;
+  background-color: transparent;
+  @extend .link-animated;
+}
+
+/* 🔹 Varianti di colore */
+.link-reverse {
+  color: var(--color-accent); // verde
+  float: right;
+}
+
+.link-remove {
+  color: #c0392b; // rosso, ad esempio
+}

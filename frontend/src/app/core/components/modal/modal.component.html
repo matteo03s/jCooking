@@ -1,0 +1,43 @@
+<!-- Modal gestito da Angular *ngIf -->
+@if (visible()) {
+
+  <div class="modal fade show d-block" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header"
+             [ngClass]="{
+  'bg-danger text-white': type() === 'ERROR'
+  }">
+          <h5 class="modal-title">{{ title() }}</h5>
+          <button type="button" class="btn-close" aria-label="Close" (click)="hide()"></button>
+        </div>
+        <div class="modal-body">
+          <p>{{ message() }}</p>
+
+          @if (removing) {
+            <hr>
+            <div class="actions">
+              <button class="link-remove" (click)="onConfirm()">Conferma</button>
+              <button class="link-reverse" (click)="onCancel()">Annulla</button>
+            </div>
+          }
+          @if (details) {
+            <hr>
+            <pre class="text-muted small">{{ details() }}</pre>
+          }
+
+
+        </div>
+        @if (!removing) {
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="hide()">Chiudi</button>
+          </div>
+        }
+
+      </div>
+    </div>
+  </div>
+
+  <!-- backdrop semi-trasparente -->
+  <div class="modal-backdrop fade show" *ngIf="visible()"></div>
+}

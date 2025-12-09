@@ -1,0 +1,22 @@
+<div class="categories container py-5">
+  <h1 class="text-center mb-5">{{ 'RECIPES.CATEGORIES' | translate}}</h1>
+
+  <div class="row g-4 justify-content-center">
+    @for (category of categories; track $index) {
+
+    <div class="col-12 col-sm-6 col-md-4">
+      <a [routerLink]="['/recipes/category/', category.slug]" class="category-card text-center">
+        <div class="icon-wrapper mb-3">
+          @if (category.pathIcon) {
+          <img [src]="category.pathIcon" [alt]="category.name" />
+          }
+        </div>
+        <h2><strong>{{ category.name }}</strong></h2>
+        @if (category.description) {
+        <p>{{ category.description }}</p>
+        }
+      </a>
+    </div>
+    }
+  </div>
+</div>

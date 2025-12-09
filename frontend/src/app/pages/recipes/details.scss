@@ -1,0 +1,57 @@
+.badge {
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: var(--color-bg-form);
+  position: relative;
+  display: inline-block;
+  color: var(--color-accent);
+  text-decoration: none;
+  padding: 0.4em 0.6em;
+  border-radius: 6px;
+  transition: color 0.3s ease;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: -10%;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 2px solid var(--color-accent);
+    transition: all 0.3s ease;
+    border-color: transparent;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    border-bottom: none;
+    border-right: none;
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+    border-top: none;
+    border-left: none;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+    border-color: var(--color-accent);
+  }
+}
+
+
+
+hr {
+  border: none;
+  border-radius: 20px;
+  height: 2px;
+  background-color: var(--color-accent);
+  opacity: 1;
+}

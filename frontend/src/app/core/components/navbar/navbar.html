@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg px-3">
+  <div class="container-fluid">
+    <!-- LOGO -->
+    <a class="navbar-brand d-flex  align-items-center gap-2" href="#">
+      <img src="{{ urlLogo }}" alt="Logo" height="48" />
+      <span>{{ title }}</span>
+    </a>
+
+    <!-- TOGGLER (solo su mobile) -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent"
+      aria-controls="navbarContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-center flex-nowrap">
+        @for (item of navbarLinks; track $index) {
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href={{item.value}}>
+              {{ item.label | translate }}
+            </a>
+          </li>
+        }
+        <li class="nav-item drop">
+          <app-dropdown
+            title="{{ 'NAV.RECIPES' | translate }}"
+            [items]="drop2">
+          </app-dropdown>
+        </li>
+        <div id="register">
+
+        <!-- Dropdown -->
+       <li class="nav-item drop">
+        @if (!hideDropdown()) {
+          <app-dropdown
+            [title]="loginDropTitle"
+            [items]="loginDropItems">
+          </app-dropdown>
+        } @else {
+          <app-dropdown
+            [title]="loggedDropTitle"
+            [items]="loggedDropItems">
+          </app-dropdown>
+        }
+        </li>
+          <!-- Dropdown
+        }
+          @if (hideDropdown()) {
+            <li class="nav-item drop">
+              <app-dropdown
+                [title]="dropdownTitle"
+                [items]="dropdownItems2">
+              </app-dropdown>
+            </li>
+          }-->
+
+       </div>
+        <li><app-lang-switcher/></li>
+      </ul>
+
+      <!-- FORM DI RICERCA -->
+      @if (recipes()) {
+      <app-navbar-search></app-navbar-search>
+      }
+<!--      <form class="d-flex align-items-center gap-2 mt-3 mt-lg-0" role="search">
+        <input
+          class="form-control me-sm-2"
+          type="search"
+          placeholder="Cerca ricette..."
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Cerca</button>
+        <button class="btn btn-outline-secondary" type="button">Filtra</button>
+      </form>
+      -->
+    </div>
+  </div>
+</nav>

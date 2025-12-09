@@ -1,0 +1,67 @@
+<div class="about-container container py-5">
+
+  <h1 class="title mb-4 text-center">{{ 'ABOUT.TITLE' | translate}}</h1>
+
+  <p
+    class="lead text-center mb-5"
+    [innerHTML]="'ABOUT.THESIS' | translate">
+  </p>
+
+  <section class="mb-5">
+    <h2 class="section-title">{{ 'ABOUT.WHY?' | translate}}</h2>
+    <p>{{ 'ABOUT.CAUSE' | translate}}</p>
+  </section>
+
+  <section class="mb-5">
+    <h2 class="section-title ai">🧞 {{ 'ABOUT.AI.TITLE' | translate}}</h2>
+    <h5>✨ {{ 'ABOUT.AI.RECIPE' | translate}}</h5>
+    <h5>✍️ {{ 'ABOUT.AI.DESCRIPTION' | translate}}</h5>
+    <h5>🏷️ {{ 'ABOUT.AI.TAGS' | translate}}</h5>
+    <h5>👨‍🍳 {{ 'ABOUT.AI.STEPS' | translate}}</h5>
+    <h5>🥂 {{ 'ABOUT.AI.SOMMELIER' | translate}}</h5>
+    <h5>🥗 {{ 'ABOUT.AI.NUTRITION' | translate}}</h5>
+    <h5>🌍 {{ 'ABOUT.AI.TRANSLATOR' | translate}}</h5>
+
+    <h2 class="section-title mt-5">{{ 'ABOUT.FEATURES.TITLE' | translate }}</h2>
+    <ul class="features">
+      <li>✏️ {{ 'ABOUT.FEATURES.RECIPES' | translate }}</li>
+      <li>🧂 {{ 'ABOUT.FEATURES.INGREDIENTS' | translate }}</li>
+      <li>⏱️ {{ 'ABOUT.FEATURES.TIME' | translate }}</li>
+      <li>🍽️ {{ 'ABOUT.FEATURES.CATEGORY' | translate }}</li>
+      <li>🏷️ {{ 'ABOUT.FEATURES.TAGS' | translate }}</li>
+      <li>📋 {{ 'ABOUT.FEATURES.STEPS' | translate }}</li>
+      <li>💬 {{ 'ABOUT.FEATURES.REVIEWS' | translate }}</li>
+      <li>⭐ {{ 'ABOUT.FEATURES.FAVOURITES' | translate }}</li>
+      <li>👥 {{ 'ABOUT.FEATURES.FRIENDSHIPS' | translate }}</li>
+    </ul>
+
+
+  </section>
+
+  <section class="mb-5">
+    <h2 class="section-title">{{ 'ABOUT.WHO.TITLE' | translate }}</h2>
+    <p [innerHTML]="'ABOUT.WHO.WHO' | translate"></p>
+    <ul>
+      <li [innerHTML]="'ABOUT.WHO.SPRING' | translate"></li>
+      <li [innerHTML]="'ABOUT.WHO.ANGULAR' | translate"></li>
+      <li [innerHTML]="'ABOUT.WHO.SQL' | translate"></li>
+      <li [innerHTML]="'ABOUT.WHO.BOOTSTRAP' | translate"></li>
+    </ul>
+  </section>
+
+  <section class="mb-5">
+    <h2 class="section-title">{{ 'ABOUT.FUTURE.TITLE' | translate }}</h2>
+    <ul>
+      <li>⭐ {{ 'ABOUT.FUTURE.SEARCH' | translate }} </li>
+      <li>⭐ {{ 'ABOUT.FUTURE.STATISTICS' | translate }} </li>
+      <li>⭐ {{ 'ABOUT.FUTURE.SOCIAL' | translate }} </li>
+      <li>⭐ {{ 'ABOUT.FUTURE.VIDEO' | translate }} </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2 class="section-title">{{'ABOUT.THANKS.TITLE' | translate}}</h2>
+    <p>{{'ABOUT.THANKS.TEXT' | translate}}</p>
+  </section>
+
+</div>

@@ -1,0 +1,87 @@
+@if (recipe) {
+  <div class="card custom-shadow p-4 mb-4">
+    <h2 class="card-title">
+      <a [href]="['/recipes/' + recipe.id]">
+        <!--      <a [routerLink]="['/recipes/', recipe.id]">
+        -->        {{ recipe.title }}
+      </a>
+    </h2>
+    <!-- 🖼️ NUOVA SEZIONE IMMAGINE -->
+    @if (recipeImage() !== null) {
+      <div class="card-image-wrapper mb-3">
+        <img [src]="recipeImage()?.urlImage" [alt]="recipe.title" class="recipe-random-img">
+      </div>
+    }
+    <p class="card-text">{{ recipe.category?.name ?? 'other' }}
+      <br>  {{ recipe.description }}</p>
+
+    <div class="rating-badge">
+      @if (recipe.averageRating !== 0) {
+        <span class="star">
+        ★ {{ recipe.averageRating | number:'1.1-1' }}</span>
+      }
+    </div>
+
+    <ul class="list-group list-group-flush mb-3">
+      <li class="list-group-item">
+        <strong>⏱️ Tempo totale:</strong>
+        @if ((recipe.prepTime + recipe.cookTime) > 59) {
+          {{ equivalentValue() }}
+        } @else {
+          {{ recipe.prepTime + recipe.cookTime }} min
+        }
+      </li>
+      <li class="list-group-item"><strong>📈 Livello:</strong> {{ recipe.level }}</li>
+    </ul>
+    <div>
+      <span class="fw-bold">🏷️ Tags: </span>
+      @for (tag of recipe.tags; track $index) {
+        <button class="badge" [routerLink]="'/recipes/tag/' + tag"><span>
+          {{ tag }}
+        </span></button>
+      }
+    </div>
+
+    <hr>
+    <span><h5><strong> 👩‍🍳 Author: </strong>
+      @if (recipe?.author) {
+        <a [routerLink]="['/recipes/user', recipe.author?.username]" class="link-author">
+        {{ recipe.author?.username }}
+      </a>
+      } @else {
+        not-specified
+      }
+</h5>
+  </span>
+
+    <app-favourite-button
+      [recipeId]="recipe.id!"
+      (favouriteChanged)="onFavouriteChanged($event)"
+    ></app-favourite-button>
+    <!--
+        <button
+          class="fav-btn"
+          [class.active]="isFavourite()"
+          (click)="toggleFavourite()"
+          title="{{ isFavourite() ? 'Remove from favourites' : 'Add to favourites' }}"
+        >
+          @if (!isFavourite()) {
+            <span>🤍</span>
+          } @else {
+            <span>❤️</span>
+          }
+        </button>
+    -->
+    @if (removable) {
+      <hr>
+      <span><h5><strong>
+      <a role="button" class="link-edit" [routerLink]="'/recipes/edit/' + recipe.id">✏️ Modifica</a>
+      <a role="button" class="link-remove" (click)="openModal(recipe.id!)">🗑️ Delete</a>
+      </strong></h5></span>
+    }
+  </div>
+}
+
+<ng-template #loading>
+  <div class="alert alert-info">Caricamento ricetta...</div>
+</ng-template>

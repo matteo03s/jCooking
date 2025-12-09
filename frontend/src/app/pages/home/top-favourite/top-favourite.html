@@ -1,0 +1,18 @@
+@if (!recipeStore.isLoading() && recipes().length === 0) {
+  <div class="no-element">Nessuna ricetta disponibile 😢</div>
+}
+
+<app-carousel
+  [title]="'HOME.TOP_RATED'"
+  [isLoading]="recipeStore.isLoading()"
+  [target]="'favourites'"
+  [items]="recipes()"
+  [itemsPerSlide]="2"
+  [itemTemplate]="recipeTpl">
+</app-carousel>
+
+<ng-template #recipeTpl let-rec>
+  <div class="recipe-card-carousel">
+        <app-simple-recipe-card [recipe]="rec"></app-simple-recipe-card>
+  </div>
+</ng-template>

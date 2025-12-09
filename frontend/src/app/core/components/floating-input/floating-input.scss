@@ -1,0 +1,54 @@
+$active-color: var(--floating-color, var(--color-accent));
+label {color: $active-color}
+placeholder {color: $active-color}
+input:focus + label {color: $active-color}
+input:not(:placeholder-shown) + label {color: $active-color;}
+
+.form-floating > label::after {
+  background-color: transparent !important;
+}
+
+.form-control:not(.is-invalid):focus {
+  border-color: $active-color !important;
+  box-shadow: 0 0 0 0.25rem color-mix(in srgb, $active-color, transparent 75%) !important;
+}
+.readonly-input {
+  background-color: #f9f9f9;
+  color: #6c757d;
+  cursor: not-allowed;
+  border: 1px solid var(--color-border);
+  opacity: 1;
+}
+input {
+  border: 1px solid var(--color-border);
+}
+.readonly-input:focus {
+  box-shadow: none;
+  border-color: #ced4da;
+}
+
+.form-floating {
+  position: relative;
+}
+
+.btn-visibility {
+  position: absolute;
+  top: 50%;
+  right: 0.75rem;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--color-accent);
+  z-index: 3;
+  transition: color 0.2s ease;
+}
+
+.btn-visibility:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+.btn-visibility:focus {
+  outline: none;
+  color: #1e3e34;
+}

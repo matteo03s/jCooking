@@ -1,0 +1,32 @@
+.review-list-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.review-list-title {
+  font-size: 2rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+
+
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.review-card {
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .review-card {
+    flex: 1 1 100%;
+  }
+}

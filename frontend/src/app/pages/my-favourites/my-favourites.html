@@ -1,0 +1,42 @@
+<div class="favourites-container">
+  <h2 class="page-title">{{ 'RECIPES.FAVOURITES.MY' | translate }} ❤️</h2>
+
+  @if (favouriteStore.isLoading()) {
+    <div class="loading">
+      <div class="spinner"></div>
+      <p>{{ 'RECIPES.FAVOURITES.LOADING' | translate }}...</p>
+    </div>
+  } @else {
+    @if (favouriteStore.favourites().length === 0) {
+      <div class="empty-state">
+        <img src="assets/catIcons/empty-fav.png" alt="No favourites" class="empty-img" />
+        <p class="empty-text">{{ 'RECIPES.FAVOURITES.NO_ELEMENT' | translate }}</p>
+        <a routerLink="/recipes" class="btn">{{ 'RECIPES.FAVOURITES.BROWSE' | translate }}</a>
+      </div>
+    } @else {
+      <div class="favourites-grid">
+        @for (fav of favouriteStore.favourites(); track $index) {
+          <div class="favourite-card" (click)="goToRecipe(fav.recipeId)">
+            <div class="image-wrapper">
+              <img
+                [src]="fav.recipeImage || 'assets/images/placeholder.jpg'"
+                [alt]="fav.recipeTitle"
+                class="recipe-img"
+              />
+              <button
+                class="remove-btn"
+                (click)="remove(fav.recipeId); $event.stopPropagation()"
+                title="Remove from favourites"
+              >
+                ✕
+              </button>
+            </div>
+            <div class="card-content">
+              <h3 class="recipe-title">{{ fav.recipeTitle }}</h3>
+            </div>
+          </div>
+        }
+      </div>
+    }
+  }
+</div>

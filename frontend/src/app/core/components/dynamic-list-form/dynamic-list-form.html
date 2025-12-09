@@ -1,0 +1,36 @@
+<label [for]="title" class="form-label fw-semibold">{{ title }}</label>
+<div cdkDropList (cdkDropListDropped)="drop($event)">
+  @for (item of items.controls; track $index) {
+
+    <div class="d-flex flex-column mb-2" cdkDrag>
+      <div class="d-flex align-items-center">
+        <input
+          [formControl]="item"
+          #inputItem
+          class="form-control me-2 item-input"
+          placeholder="{{'FORM.ENTER' | translate}} {{ title | lowercase | singular}}"
+          (keydown)="onKey($event, $index)"
+          (blur)="markAsTouched()"
+          [class.is-invalid]="item.invalid && (item.touched || item.dirty)"
+        />
+        @if (items.length > 1) {
+          <button
+            type="button"
+            class="btn btn-danger btn-sm"
+            (click)="removeItem($index)"
+          >
+            &times;
+          </button>
+        }
+        <span class="drag-handle ms-2" cdkDragHandle style="cursor: grab;">&#x2630;</span>
+      </div>
+
+      <!-- Errori -->
+      @if (item.hasError('duplicate')) {
+        <div class="text-danger small mt-1">
+          Duplicate {{ title | lowercase }} are not allowed
+        </div>
+      }
+    </div>
+  }
+</div>

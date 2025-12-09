@@ -1,0 +1,48 @@
+<div class="nutrition-box">
+  <div class="header">
+    <h3>🥗 {{ 'AI.NUTRITION.TITLE' | translate}}<small>{{ 'AI.NUTRITION.SUBTITLE' | translate}}</small></h3>
+    <span class="badge">{{ nutrition.briefComment }}</span>
+  </div>
+
+  <div class="calories-display">
+    <span class="number">{{ nutrition.calories }}</span>
+    <span class="unit">Kcal</span>
+  </div>
+
+  <div class="macros-grid">
+    <!-- Carboidrati -->
+    <div class="macro-item">
+      <div class="label">
+        <span>{{ 'AI.NUTRITION.CARBS' | translate}}</span>
+        <strong>{{ nutrition.carbohydrates }}g</strong>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar carbs" [style.width.%]="calcPercent(nutrition.carbohydrates)"></div>
+      </div>
+    </div>
+
+    <!-- Proteine -->
+    <div class="macro-item">
+      <div class="label">
+        <span>{{ 'AI.NUTRITION.PROTEINS' | translate}}</span>
+        <strong>{{ nutrition.proteins }}g</strong>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar protein" [style.width.%]="calcPercent(nutrition.proteins)"></div>
+      </div>
+    </div>
+
+    <!-- Grassi -->
+    <div class="macro-item">
+      <div class="label">
+        <span>{{ 'AI.NUTRITION.FATS' | translate}}</span>
+        <strong>{{ nutrition.fats }}g</strong>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar fats" [style.width.%]="calcPercent(nutrition.fats)"></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="disclaimer">{{ 'AI.NUTRITION.DISCLAIMER' | translate}}</p>
+</div>

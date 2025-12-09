@@ -1,0 +1,266 @@
+@if (recipeStore.isLoading() && !isDraft) {
+  <app-spinner/>
+}
+@if (displayRecipe()) {
+  <div class="recipe-detail-fullwidth container-fluid py-4">
+
+    <!-- Intestazione e descrizione -->
+    <div class="row mb-2">
+      <div class="col-lg-8 text-center align-content-center">
+        <h1 class="recipe-title-main">{{ displayRecipe()?.title }}</h1>
+        <p class="lead">{{ displayRecipe()?.description }}</p>
+        <div class="rating-badge">
+          @if (recipe()?.averageRating !== 0) {
+            <span class="star">★ {{ recipe()?.averageRating | number:'1.1-1' }}</span>
+          } @else if (isDraft) {
+            <span class="text-muted">Anteprima Nuova Ricetta</span>
+          } @else {
+            <span class="text-muted">There are no reviews for this recipe</span>
+          }
+        </div>
+      </div>
+      <!-- SEZIONE BOTTONI AI -->
+      <div class="col-lg-4">
+        <div class="info-block ai-buttons text-center">
+          <h2 class="section-title ai">🧞{{ 'RECIPE.AI.TITLE' | translate }}</h2>
+
+          <!-- Dropdown Lingua -->
+          <div class="dropdown">
+            <button class="btn-ai btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              🌍 {{ currentLang }}
+              @if(aiStore.isTranslating()) { <span class="spinner-border spinner-border-sm"></span> }
+            </button>
+            <ul class="dropdown-menu">
+              @for (lang of languages; track lang.code) {
+                <li><a class="dropdown-item" (click)="onLanguageChange(lang.code)">{{ lang.label }}</a></li>
+              }
+            </ul>
+          </div>
+
+          <!-- ANALISI NUTRIZIONALE -->
+          <button class="btn-ai"
+                  (click)="analyzeNutrition()"
+                  [class.loading]="aiStore.isNutritionLoading()"
+                  [disabled]="aiStore.nutritionInfo() !== null">
+            @if (aiStore.isNutritionLoading()) {
+              <span class="spinner-border spinner-border-sm"></span> {{ 'RECIPE.AI.NUTRITION_LOADING' | translate }}...
+            } @else {
+              🥗 {{ 'RECIPE.AI.NUTRITION' | translate }}
+            }
+          </button>
+
+          <!-- CONSIGLI SOMMELIER -->
+          <button class="btn-ai"
+                  (click)="askSommelier()"
+                  [class.loading]="aiStore.isSommelierLoading()"
+                  [disabled]="aiStore.beverageRecommendations().length > 0">
+            @if (aiStore.isSommelierLoading()) {
+              <span class="spinner-border spinner-border-sm"></span> {{ 'RECIPE.AI.SOMMELIER_LOADING' | translate }}...
+            } @else {
+              🎩 {{ 'RECIPE.AI.SOMMELIER' | translate }}
+            }
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <!-- RISULTATI AI -->
+      <div class="mb-4 text-center">
+
+        <!-- NUTRITION -->
+        @if (aiStore.nutritionInfo(); as info) {
+          <div class="fade-in-up">
+            <app-nutrition-card
+              [nutrition]="info"
+            ></app-nutrition-card>
+          </div>
+        }
+        <!-- SOMMELIER -->
+        @if (aiStore.beverageRecommendations().length > 0) {
+          <div class="fade-in-up">
+            <app-sommelier-suggestion
+              [beverages]="aiStore.beverageRecommendations()"
+            ></app-sommelier-suggestion>
+          </div>
+        }
+
+      </div>
+
+      <!-- COLONNA DI SINISTRA -->
+      <div class="col-lg-4 order-2 order-lg-1">
+
+        <!-- Blocco Dati Principali -->
+        <div class="info-block mb-4">
+          <h2 class="section-title">{{ 'RECIPE.DETAILS' | translate }}</h2>
+          <ul class="list-unstyled">
+            <li><strong>⏱️ {{ 'RECIPE.PREP_TIME' | translate }}:</strong> {{ recipe()?.prepTime }} min</li>
+            <li><strong>🔥 {{ 'RECIPE.COOK_TIME' | translate }}:</strong> {{ recipe()?.cookTime }} min</li>
+            <li><strong>🍽️ {{ 'RECIPE.SERVINGS' | translate }}:</strong> {{ recipe()?.servings }}</li>
+            <li><strong>📈 {{ 'RECIPE.LEVEL' | translate }}:</strong> {{ recipe()?.level | levelEnumLabel }}</li>
+            <li><strong>🏷️ {{ 'RECIPE.CATEGORY' | translate }}:</strong> {{ recipe()?.category?.name }}</li>
+            <li><strong>🗓️ {{ 'RECIPE.DATE' | translate }}: :</strong> {{ recipe()?.uploadDate }}</li>
+            @if (!isDraft) {
+
+              <li>
+                <strong>👩‍🍳 {{ 'RECIPE.AUTHOR' | translate }}:</strong>
+                @if (recipe()?.author) {
+                  <a [routerLink]="['/recipes/user', recipe()?.author?.username]" class="link-author">
+                    {{ recipe()?.author?.username }}
+                  </a>
+                } @else {
+                  {{ 'RECIPE.NO_AUTHOR' | translate }}
+                }
+              </li>
+            }
+          </ul>
+        </div>
+
+        <!-- Blocco Ingredienti -->
+        <div class="info-block mb-4">
+
+          <h2 class="section-title">🛒 {{ 'RECIPE.INGREDIENTS' | translate }}</h2>
+
+          <div class="servings-control">
+            <button class="serv-btn" (click)="decreaseServings()">−</button>
+            <span class="serv-number">{{ currentServings }}</span>
+            <strong> {{ 'RECIPE.SERVINGS' | translate }}</strong>
+            <button class="serv-btn" (click)="increaseServings()">+</button>
+          </div>
+
+          <ul class="list-unstyled ingredients-list-stacked">
+            @for (ing of displayRecipe()?.ingredients; track $index) {
+              <li>
+                <span class="fw-bold">
+                @if ((ing.unit | unitEnumLabel) !== 'quanto basta') {
+                  {{ scaledQuantity(ing.quantity) | number:'1.0-2' }}
+                }
+                  {{ ing.unit | unitEnumLabel }}
+                </span>
+                <span>{{ ing.name }}</span>
+              </li>
+            }
+          </ul>
+        </div>
+
+        <!-- Blocco Condizionale (Tags + Actions)-->
+        @if (recipeImages() !== null && recipeImages().length > 0) {
+          <!-- Blocco Tags -->
+          <div class="info-block mb-4">
+            <h2 class="section-title">🏷️ Tags</h2>
+            <div class="tags-container-fullwidth">
+              @for (tag of recipe()?.tags; track $index) {
+                <button class="tag" [routerLink]="'/recipes/tag/' + tag">{{ tag }}</button>
+              }
+            </div>
+          </div>
+          <!-- Blocco Azioni -->
+          @if (!isDraft) {
+            <hr>
+            <div class="actions-grid">
+              <h4>
+                <div class="row">
+                  <a role="button" class="link-edit" [routerLink]="'/reviews/new/' + recipeId">
+                    ✍ {{ 'RECIPE.ACTIONS.NEW_REVIEW' | translate }}
+                  </a>
+                  <a role="button" class="link-edit" [routerLink]="'/reviews/recipe/' + recipeId">
+                    👀 {{ 'RECIPE.ACTIONS.VISUALIZE_REVIEW' | translate }}
+                  </a>
+                </div>
+              </h4>
+
+              <h4>
+                <div class="row">
+                  @if (recipeStore.isMyRecipe(recipeId)) {
+                    <a role="button" class="link-edit" [routerLink]="'/recipes/edit/' + recipeId">
+                      ✏️ {{ 'RECIPE.ACTIONS.EDIT' | translate }}
+                    </a>
+
+                    <a role="button" class="link-remove" (click)="openModal(recipeId)">
+                      🗑️ {{ 'RECIPE.ACTIONS.DELETE' | translate }}
+                    </a>
+                  }
+                </div>
+              </h4>
+
+            </div>
+          }
+        }
+      </div>
+
+      <!-- COLONNA DI DESTRA -->
+      <div class="col-lg-8 order-1 order-lg-2">
+
+        <!-- Blocco Immagini -->
+        @if (recipeImages() !== null && recipeImages().length > 0) {
+          <div class="info-block mb-4">
+            <app-image-carousel
+              [images]=recipeImages()
+            ></app-image-carousel>
+          </div>
+        }
+        <!-- Blocco Steps -->
+        <div class="info-block mb-4">
+          <h2 class="section-title">👨‍🍳 {{ 'RECIPE.STEPS' | translate }}</h2>
+          <div class="steps-container-fullwidth mt-2">
+            @for (step of displayRecipe()?.steps; track $index) {
+              <div class="step-item-fullwidth">
+                <span class="step-number-fullwidth">{{ $index + 1 }}</span>
+                <span class="step-text-fullwidth">{{ step }}</span>
+              </div>
+            }
+          </div>
+        </div>
+        <!-- Blocco Condizionale (Tags + Actions)-->
+        @if (recipeImages().length <= 0) {
+          <!-- Blocco Tags -->
+          <div class="info-block mb-4">
+            <h2 class="section-title">🏷️ Tags</h2>
+            <div class="tags-container-fullwidth">
+              @for (tag of recipe()?.tags; track $index) {
+                <button class="tag" [routerLink]="'/recipes/tag/' + tag">{{ tag }}</button>
+              }
+            </div>
+          </div>
+          <!-- Blocco Azioni -->
+          @if (!isDraft) {
+            <hr>
+            <div class="actions-grid">
+              <h4>
+                <div class="row">
+                  <a role="button" class="link-edit" [routerLink]="'/reviews/new/' + recipeId">
+                    ✍ {{ 'RECIPE.ACTIONS.NEW_REVIEW' | translate }}
+                  </a>
+                  @if (recipeStore.isMyRecipe(recipeId)) {
+                    <a role="button" class="link-edit" [routerLink]="'/recipes/edit/' + recipeId">
+                      ✏️ {{ 'RECIPE.ACTIONS.EDIT' | translate }}
+                    </a>
+                  }
+                </div>
+              </h4>
+
+              <h4>
+                <div class="row">
+                  <a role="button" class="link-edit" [routerLink]="'/reviews/recipe/' + recipeId">
+                    👀 {{ 'RECIPE.ACTIONS.VISUALIZE_REVIEW' | translate }}
+                  </a>
+                  @if (recipeStore.isMyRecipe(recipeId)) {
+                    <a role="button" class="link-remove" (click)="openModal(recipeId)">
+                      🗑️ {{ 'RECIPE.ACTIONS.DELETE' | translate }}
+                    </a>
+                  }
+                </div>
+              </h4>
+
+            </div>
+          }
+        }
+
+      </div>
+    </div>
+
+
+  </div>
+}

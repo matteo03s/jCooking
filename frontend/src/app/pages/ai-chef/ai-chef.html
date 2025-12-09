@@ -1,0 +1,69 @@
+<div class="ai-page-container">
+  @if (!aiStore.draftRecipe()) {
+
+    <!-- HEADER -->
+    <header class="ai-header">
+      <div class="icon-wrapper">✨🎉👨‍🍳🧙🧞</div>
+      <h1>ChefBot</h1>
+      <p>{{ 'AI.GENERATOR.SUBTITLE' | translate}}</p>
+    </header>
+
+    <!-- SEZIONE INPUT -->
+    <section class="input-section">
+      <form [formGroup]="aiForm" class="form-card" (ngSubmit)="generate()">
+
+        <!-- Floating ingredients -->
+        <app-floating-textarea
+          formControlName="ingredients"
+          title="{{ 'AI.GENERATOR.INGREDIENTS' | translate}}?"
+          placeholder="{{ 'AI.GENERATOR.ING_PLACEHOLDER' | translate}}"
+        ></app-floating-textarea>
+
+        <!-- Floating "type" -->
+        <app-floating-single-line-input
+          formControlName="type"
+          title="{{ 'AI.GENERATOR.TYPE' | translate}}"
+          inputType="text"
+          placeholder="{{ 'AI.GENERATOR.TYPE_PLACEHOLDER' | translate}}"
+        ></app-floating-single-line-input>
+
+        <!-- Submit Button -->
+        <app-submit-button
+          [label]="'🧑‍🍳' + ( 'AI.GENERATOR.SUBMIT' | translate)"
+          [disabled]="aiStore.isGenerating() || aiForm.invalid"
+          [isLoading]="aiStore.isGenerating()">
+        </app-submit-button>
+
+      </form>
+    </section>
+  }
+
+  <!-- SEZIONE RISULTATO -->
+  @if (aiStore.draftRecipe(); as draft) {
+    <div class="success-message">
+      ✨ {{ 'AI.GENERATOR.SUCCESS' | translate}}
+    </div>
+
+    <app-recipe-details
+      [externalRecipe]="draft"
+      [isDraft]="true">
+    </app-recipe-details>
+
+    <!-- SEZIONE SALVATAGGIO/CANCELLAZIONE -->
+    <div class="actions-footer">
+      <a role="button" class="link-remove" (click)="discard()">
+        🗑️ {{ 'AI.GENERATOR.REMOVE' | translate}}
+      </a>
+
+      @if (isLogged()) {
+        <a role="button" class="link-edit" (click)="saveRecipe()">
+          @if (!recipeStore.isLoading()) {
+            💾 {{ 'AI.GENERATOR.SAVE' | translate}}
+          } @else {
+            {{ 'AI.GENERATOR.SAVE_LOADING' | translate}}...
+          }
+        </a>
+      }
+    </div>
+  }
+</div>

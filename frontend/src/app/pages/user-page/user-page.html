@@ -1,0 +1,52 @@
+<div class="container">
+  @if (user) {
+    <div class="card shadow-lg p-4 mx-auto custom-card">
+      <div class="row g-4">
+        <!-- Avatar a sinistra -->
+        <div class="col-12 col-md-4 d-flex justify-content-md-start justify-content-center">
+          <div class="avatar-wrapper">
+            <img
+              [src]="user.avatar | safeAvatar"
+              alt="User Avatar"
+              class="avatar"
+            />
+          </div>
+        </div>
+
+
+        <!-- Dati utente -->
+        <div class="col-12 col-md-8">
+          <h2 class="card-title mb-1">{{ user?.name }} {{ user?.surname }}</h2>
+          <p class="card-subtitle text-muted mb-3">&#64;{{ user?.username }}</p>
+
+          <ul class="list-group list-group-flush mb-3">
+            <li class="list-group-item">
+              <strong>📧 Email:</strong> {{ user?.email || ('USER.NOT_EMAIL' | translate) }}
+            </li>
+            <li class="list-group-item">
+              <strong>🎂 {{'USER.AGE' | translate}}</strong> {{ user?.age || '-' }} {{'USER.AGE2' | translate}}
+            </li>
+            <li class="list-group-item">
+              <strong>⚧ {{'USER.GENDER' | translate}}</strong> {{ user?.gender || '-' }}
+            </li>
+          </ul>
+        </div>
+
+        <!-- Sezione pulsanti in basso, a tutta larghezza -->
+        <div class="col-12">
+          <div class="my-button-section">
+            <a href="users/edit" class="action-btn">✏️ {{ 'USER.MODIFY' | translate }}</a>
+            <a href="users/edit" class="action-btn">🔑 Modifica Credenziali</a>
+            <a href="recipes/my" class="action-btn">📖 {{ 'USER.VISUALIZE_RECIPES' | translate }}</a>
+            <a href="users/my/favourites" class="action-btn">❤️ {{ 'USER.VISUALIZE_FAVOURITES' | translate }}</a>
+            <a href="recipes/new" class="action-btn">🍳➕ {{ 'USER.WRITE_RECIPE' | translate }}</a>
+            <a href="reviews/my" class="action-btn">⭐ {{ 'USER.VISUALIZE_REVIEWS' | translate }}</a>
+            <a href="users/other" class="action-btn">🕵️‍♂️ {{ 'USER.FIND_FRIENDSHIPS' | translate }}</a>
+            <a href="users/my/friends" class="action-btn">🧡 {{ 'USER.MY_FRIENDSHIPS' | translate }}</a>
+            <a href="users/my/request" class="action-btn">📨 {{ 'USER.REQUEST_FRIENDSHIPS' | translate }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>

@@ -1,0 +1,17 @@
+
+.recipe-card-carousel {
+  width: 40%;
+  padding: 2%;
+}
+
+@media (max-width: 768px) {
+  .recipe-card-carousel {
+    width: 240px;
+  }
+}
+
+@media (max-width: 576px) {
+  .recipe-card-carousel {
+    width: 100%;
+  }
+}

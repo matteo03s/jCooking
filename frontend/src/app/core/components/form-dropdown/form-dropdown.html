@@ -1,0 +1,42 @@
+<div class="mb-3">
+  @if (showLabel) {
+  <label [for]="title" class="form-label fw-semibold">{{ title | translate}}</label>
+  }
+  <select
+    [id]="title"
+    class="form-select bg-light"
+    [disabled]="isDisabled"
+    [value]="value"
+    (change)="onSelect($event)"
+    (blur)="onBlur()"
+    required
+  >
+    <option value="" disabled>{{'FORM.SELECT' | translate}} {{ title | translate}}</option>
+    @for (item of items; track id; let id=$index) {
+      <div class="dropdown-item">
+        <option [value]="item.value">{{ item.label | translate}}</option>
+      </div>
+    }
+  </select>
+
+  <!-- Error message -->
+  @if (invalid) {
+    <div class="text-danger small mt-1">
+      @if (ngControl?.control?.errors?.['required']) {
+        <ng-container>
+          {{ 'FORM.REQUIRED' | translate }}
+        </ng-container>
+      }
+      @if (ngControl?.control?.errors?.['minlength']) {
+        <ng-container>
+          {{ 'FORM.MINLENGTH' | translate }}
+        </ng-container>
+      }
+      @if (ngControl?.control?.errors?.['maxlength']) {
+        <ng-container>
+          {{ 'FORM.MAXLENGTH' | translate }}
+        </ng-container>
+      }
+    </div>
+  }
+</div>

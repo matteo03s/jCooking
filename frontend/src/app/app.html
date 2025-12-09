@@ -1,0 +1,29 @@
+<header>
+  <app-navbar
+    #nav
+    [urlLogo]="urlLogo"
+    [title]="title()"
+    [navbarLinks]="navbarLinks"
+    [hideDropdown]="isLogged"
+    loginDropTitle='login'
+    [loginDropItems]="dropLogin"
+    loggedDropTitle='logout'
+    [loggedDropItems]="dropLogged"
+    [drop2]="recipesDropdown"
+  >
+<!--    [dropdownItems2]="dropLogged"-->
+  </app-navbar>
+</header>
+
+<app-scroll-to-top></app-scroll-to-top>
+<app-notifications></app-notifications>
+<router-outlet></router-outlet>
+
+<footer>
+  <app-footer/>
+</footer>
+
+<!--  [title]="errorService.errorName"
+[details]="'Tentativo di navigare a: ' + errorService.attemptedUrl() + '\n' + errorService.errorDetails()"
+-->
+
