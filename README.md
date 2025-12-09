@@ -1,6 +1,5 @@
 # jCooking
 progetto tirocinio laurea triennale
-# jCooking
 
 **Descrizione**  
 jCooking è un'applicazione full-stack per la gestione di ricette, con funzionalità di creazione, modifica, gestione ingredienti, steps, tags, recensioni e suggerimenti AI.
